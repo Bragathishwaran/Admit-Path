@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdmitPath - College Admissions Counseling | Your Journey. Your Future.</title>
+  <meta name="description" content="AdmitPath provides personalised college application and admissions counseling  strategy, essays, university selection, scholarships and interview prep.">
+  <link rel="canonical" href="https://www.admitpath.example/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AdmitPath  Your Dream College Starts With the Right Guidance">
+  <meta property="og:description" content="Personalised admissions counseling, from strategy to submission.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:site_name" content="AdmitPath">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.13"></script>
+  <script>tailwind.config={corePlugins:{preflight:false},theme:{extend:{colors:{jade:{DEFAULT:'#0E7C6B',600:'#12907C'},coral:'#E4572E',mist:'#E7F3F0',gold:'#E1A93E'}}}}</script>
+  <link href="assets/css/variables.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/tailwind.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/responsive.css" rel="stylesheet">
+  <link href="assets/css/rtl.css" rel="stylesheet">
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+</head>
+<body data-page="index" data-page-title="Home">
+  <div data-include="components/preloader.html"></div>
+  <!-- ============ AdmitPath shared header ============ -->
+<a class="ap-skip" href="#main">Skip to main content</a>
+<header class="ap-header">
+  <div class="ap-container ap-header__inner">
+    <a href="index.html" class="ap-brand" aria-label="AdmitPath home">
+      <svg class="ap-brand__mark ap-no-flip" viewBox="0 0 240 60" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(10, 10)">
+          <circle cx="20" cy="20" r="20" fill="#0F172A" />
+          <polygon points="20,8 31,16 20,24 9,16" fill="#F59E0B" />
+          <path d="M13,20 v5 c0,3 7,3 7,3 s7,0 7,-3 v-5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+          <circle cx="27" cy="21" r="1.5" fill="#F59E0B" />
+        </g>
+        <text x="60" y="27" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#0F172A">Admit<tspan fill="#F59E0B">Path</tspan></text>
+        <text x="60" y="44" font-family="'Inter', sans-serif" font-weight="500" font-size="10" fill="#64748B" letter-spacing="1.5">ADMISSIONS COUNSELING</text>
+      </svg>
+    </a>
+
+    <nav class="ap-nav" aria-label="Primary navigation">
+      <div class="ap-dropdown">
+        <a class="ap-nav__link" href="index.html" data-dropdown aria-haspopup="true" aria-expanded="false">Home <i class="bi bi-chevron-down"></i></a>
+        <div class="ap-dropdown__menu" role="menu">
+          <a class="ap-dropdown__item" href="index.html" role="menuitem"><i class="bi bi-house"></i> Home 1</a>
+          <a class="ap-dropdown__item" href="home-2.html" role="menuitem"><i class="bi bi-star"></i> Success Stories</a>
+        </div>
+      </div>
+      <a class="ap-nav__link" href="about.html" data-nav>About</a>
+      <a class="ap-nav__link" href="services.html" data-nav>Services</a>
+      <a class="ap-nav__link" href="blog.html" data-nav>Blog</a>
+      <a class="ap-nav__link" href="pricing.html" data-nav>Pricing</a>
+      <a class="ap-nav__link" href="contact.html" data-nav>Contact</a>
+    </nav>
+
+    <div class="ap-header__actions">
+      <button type="button" class="ap-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><i class="bi bi-moon"></i></button>
+      <button type="button" class="ap-icon-btn" data-rtl-toggle aria-label="Toggle RTL"><i class="bi bi-text-wrap"></i><span class="d-none d-lg-inline" style="font-size:.72rem;font-weight:700">RTL</span></button>
+
+      <div class="ap-dropdown d-none d-lg-block">
+        <button type="button" class="ap-icon-btn" data-dropdown aria-haspopup="true" aria-expanded="false" aria-label="My account"><i class="bi bi-person-circle"></i></button>
+        <div class="ap-dropdown__menu" role="menu">
+          <div data-auth-guest>
+            <a class="ap-dropdown__item" href="login.html" role="menuitem"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            <a class="ap-dropdown__item" href="register.html" role="menuitem"><i class="bi bi-person-plus"></i> Create account</a>
+          </div>
+          <div data-auth-user hidden>
+            <div class="px-2 py-1"><small class="ap-text-muted d-block">Signed in as</small><strong data-auth-name></strong> <span class="ap-badge ap-badge--accent" data-auth-role></span></div>
+            <hr class="ap-divider my-1">
+            <a class="ap-dropdown__item" href="student-dashboard.html" data-auth-dashboard role="menuitem"><i class="bi bi-speedometer2"></i> My Dashboard</a>
+            <a class="ap-dropdown__item" href="application-checklist.html" role="menuitem"><i class="bi bi-list-check"></i> Checklist</a>
+            <a class="ap-dropdown__item" href="essay-feedback.html" role="menuitem"><i class="bi bi-file-earmark-text"></i> Essay Feedback</a>
+            <a class="ap-dropdown__item" href="meetings.html" role="menuitem"><i class="bi bi-calendar-event"></i> Meetings</a>
+            <hr class="ap-divider my-1">
+            <a class="ap-dropdown__item" href="#" data-logout role="menuitem"><i class="bi bi-box-arrow-right"></i> Sign out</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="student-dashboard.html" class="btn-ap btn-ap--primary btn-ap--sm ap-btn-desktop" data-nav data-auth-dashboard>Dashboard</a>
+      <button type="button" class="ap-icon-btn ap-burger" data-mobile-open aria-label="Open menu" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="ap-mobile" id="mobileNav">
+  <div class="ap-mobile__overlay" data-mobile-close></div>
+  <div class="ap-mobile__panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <a href="index.html" class="ap-brand"><span class="ap-brand__name">Admit<span>Path</span></span></a>
+      <button type="button" class="ap-icon-btn" data-mobile-close aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <a class="ap-mobile__link" href="index.html" data-nav>Home 1 <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
+    <a class="ap-mobile__link" href="home-2.html" data-nav>Success Stories <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
+    <a class="ap-mobile__link" href="about.html" data-nav>About Us <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
+    <a class="ap-mobile__link" href="services.html" data-nav>Services <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
+    <a class="ap-mobile__link" href="blog.html" data-nav>Blog <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
+    <a class="ap-mobile__link" href="pricing.html" data-nav>Pricing <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
+    <a class="ap-mobile__link" href="contact.html" data-nav>Contact <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
+    <a class="ap-mobile__link" href="login.html" data-nav data-auth-dashboard>Dashboard <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
+    <div class="mt-3 d-grid gap-2" data-auth-guest>
+      <a href="login.html" class="btn-ap btn-ap--outline">Login</a>
+      <a href="register.html" class="btn-ap btn-ap--primary">Create free account</a>
+    </div>
+    <div class="mt-3 d-grid gap-2" data-auth-user hidden>
+      <a href="student-dashboard.html" data-auth-dashboard class="btn-ap btn-ap--primary"><i class="bi bi-speedometer2"></i> My Dashboard</a>
+      <a href="application-checklist.html" class="btn-ap btn-ap--outline">Checklist</a>
+      <a href="essay-feedback.html" class="btn-ap btn-ap--outline">Essay Feedback</a>
+      <a href="meetings.html" class="btn-ap btn-ap--outline">Meetings</a>
+      <a href="#" data-logout class="btn-ap btn-ap--outline">Sign out</a>
+    </div>
+    <div class="d-flex gap-2 mt-3">
+      <button type="button" class="ap-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+      <button type="button" class="ap-icon-btn" data-rtl-toggle aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+    </div>
+  </div>
+</div>
+
+
+  <main id="main">
+    <!-- 1. HERO -->
+    <section class="ap-hero ap-section ap-hero--home1 ap-home1-parallax" style="--ap-parallax-image:url('assets/images/bg-parallax.jpg'); background-position: center top;">
+      <div class="ap-container ap-hero__grid ap-hero__grid--intro">
+        <div>
+          <span class="ap-eyebrow ap-reveal"><i class="bi bi-mortarboard-fill"></i> Admissions counseling, done right</span>
+            <h1 class="mt-3 ap-reveal">Your Dream College Starts With the <span class="ap-gradient-text">Right Guidance.</span></h1>
+          <p class="ap-hero__intro ap-reveal">College applications can feel complicated, but you do not have to figure everything out alone. AdmitPath helps you find universities that fit, build a clear application plan and tell your story with confidence, with experienced counselors alongside you at each step.</p>
+          <div class="ap-hero__actions d-flex flex-wrap justify-content-center gap-3 mt-4 ap-reveal">
+            <button type="button" class="btn-ap btn-ap--primary btn-ap--lg" data-open-modal="consultModal"><i class="bi bi-calendar2-check"></i> Book a Free Consultation</button>
+            <a href="services.html" class="btn-ap btn-ap--outline btn-ap--lg">Explore Our Services <i class="bi bi-arrow-right ap-flip-rtl"></i></a>
+          </div>
+          <div class="d-flex flex-wrap justify-content-center gap-4 mt-4 ap-reveal">
+            <div class="d-flex align-items-center gap-2"><i class="bi bi-shield-check ap-text-success fs-4"></i><span class="small">Ethical, student-first advice</span></div>
+            <div class="d-flex align-items-center gap-2"><i class="bi bi-person-badge ap-text-accent fs-4"></i><span class="small">Vetted expert counselors</span></div>
+            <div class="d-flex align-items-center gap-2"><i class="bi bi-graph-up-arrow ap-text-gold fs-4"></i><span class="small">Track progress in one place</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SUCCESS METRICS -->
+    <section class="ap-section ap-section--tight" aria-labelledby="metrics-title">
+      <div class="ap-container">
+        <div class="text-center mb-4 ap-reveal">
+          <span class="ap-eyebrow"><i class="bi bi-bar-chart"></i> Illustrative demo metrics</span>
+          <h2 id="metrics-title" class="mt-2">Results that build confidence</h2>
+          <p class="mx-auto" style="max-width:60ch">These figures are sample demo values for layout purposes until verified company data is supplied.</p>
+        </div>
+        <div class="row g-3 g-lg-4 text-center ap-metrics">
+          <div class="col-6 col-lg-3 ap-reveal"><div class="ap-card ap-card__body h-100"><div class="ap-stat__value" data-count="12000" data-suffix="+">0</div><div class="ap-stat__label">Students guided</div></div></div>
+          <div class="col-6 col-lg-3 ap-reveal"><div class="ap-card ap-card__body h-100"><div class="ap-stat__value" data-count="45000" data-suffix="+">0</div><div class="ap-stat__label">Applications supported</div></div></div>
+          <div class="col-6 col-lg-3 ap-reveal"><div class="ap-card ap-card__body h-100"><div class="ap-stat__value" data-count="15" data-suffix=" years">0</div><div class="ap-stat__label">Average counselor experience</div></div></div>
+          <div class="col-6 col-lg-3 ap-reveal"><div class="ap-card ap-card__body h-100"><div class="ap-stat__value" data-count="96" data-suffix="%">0</div><div class="ap-stat__label">Student satisfaction</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SERVICES OVERVIEW -->
+    <section class="ap-section ap-section--lavender" aria-labelledby="services-title">
+      <div class="ap-container">
+        <div class="text-center mb-5 ap-reveal">
+          <span class="ap-eyebrow"><i class="bi bi-grid"></i> What we do</span>
+          <h2 id="services-title" class="mt-2">Everything your application needs</h2>
+          <p class="mx-auto" style="max-width:62ch">A complete support system covering every stage of the admissions journey.</p>
+        </div>
+        <div class="row g-4 mt-2">
+          <div class="col-12 col-md-6 col-lg-4 ap-reveal"><article class="ap-card ap-card--hover ap-card__body h-100"><div class="ap-media ap-ratio-16x9 mb-3"><img src="assets/images/Application%20Strategy.jpg" alt="College application form on a laptop" loading="lazy"></div><h3 class="h5">Application Strategy</h3><p class="small">A personalised roadmap aligning your goals, profile and target universities.</p><a href="services.html" class="ap-link-inline small">Learn more <i class="bi bi-arrow-right ap-flip-rtl"></i></a></article></div>
+          <div class="col-12 col-md-6 col-lg-4 ap-reveal"><article class="ap-card ap-card--hover ap-card__body h-100"><div class="ap-media ap-ratio-16x9 mb-3"><img src="assets/images/Personal%20Statement%20&%20Essay%20Coaching.jpg" alt="Student writing and studying for an essay" loading="lazy"></div><h3 class="h5">Essay Coaching</h3><p class="small">One-to-one coaching to craft authentic, memorable personal statements.</p><a href="services.html" class="ap-link-inline small">Learn more <i class="bi bi-arrow-right ap-flip-rtl"></i></a></article></div>
+          <div class="col-12 col-md-6 col-lg-4 ap-reveal"><article class="ap-card ap-card--hover ap-card__body h-100"><div class="ap-media ap-ratio-16x9 mb-3"><img src="assets/images/University%20Selection.jpg" alt="University campus with students walking toward the building" loading="lazy"></div><h3 class="h5">University Selection</h3><p class="small">Build a balanced list of reach, match and safety schools that fit you.</p><a href="services.html" class="ap-link-inline small">Learn more <i class="bi bi-arrow-right ap-flip-rtl"></i></a></article></div>
+          <div class="col-12 col-md-6 col-lg-4 ap-reveal"><article class="ap-card ap-card--hover ap-card__body h-100"><div class="ap-media ap-ratio-16x9 mb-3"><img src="assets/images/Scholarship%20Guidance.jpg" alt="Scholarship application and financial planning documents" loading="lazy"></div><h3 class="h5">Scholarship Guidance</h3><p class="small">Identify and apply to scholarships that reduce the cost of your degree.</p><a href="services.html" class="ap-link-inline small">Learn more <i class="bi bi-arrow-right ap-flip-rtl"></i></a></article></div>
+          <div class="col-12 col-md-6 col-lg-4 ap-reveal"><article class="ap-card ap-card--hover ap-card__body h-100"><div class="ap-media ap-ratio-16x9 mb-3"><img src="assets/images/Interview%20Preparation.jpg" alt="Candidate practicing in a formal interview" loading="lazy"></div><h3 class="h5">Interview Preparation</h3><p class="small">Mock interviews and feedback so you walk in confident and prepared.</p><a href="services.html" class="ap-link-inline small">Learn more <i class="bi bi-arrow-right ap-flip-rtl"></i></a></article></div>
+          <div class="col-12 col-md-6 col-lg-4 ap-reveal"><article class="ap-card ap-card--hover ap-card__body h-100"><div class="ap-media ap-ratio-16x9 mb-3"><img src="assets/images/Application%20document%20review.jpg" alt="Counselors reviewing application documents together" loading="lazy"></div><h3 class="h5">Application Review</h3><p class="small">A complete quality review of every document before you hit submit.</p><a href="services.html" class="ap-link-inline small">Learn more <i class="bi bi-arrow-right ap-flip-rtl"></i></a></article></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SUCCESS STORIES -->
+    <section class="ap-section ap-home1-parallax" style="--ap-parallax-image:url('assets/images/bg-parallax.jpg'); background-position: center top;" aria-labelledby="stories-title">
+      <div class="ap-container">
+        <div class="text-center mb-5 ap-reveal ap-home1-stories-intro">
+            <span class="ap-eyebrow"><i class="bi bi-stars"></i> Sample success stories</span>
+            <h2 id="stories-title" class="mt-2">Real journeys, sample profiles</h2>
+            <p class="mx-auto mb-4">Fictional demo profiles used to illustrate the process. Not real client outcomes.</p>
+            <a href="home-2.html" class="btn-ap btn-ap--outline">More success stories <i class="bi bi-arrow-right ap-flip-rtl"></i></a>
+        </div>
+        <div class="row g-4 ap-home1-story-grid">
+          <div class="col-12 col-lg-4 ap-reveal">
+            <article class="ap-card ap-card--hover h-100">
+              <div class="ap-media ap-ratio-16x9"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Engineering student working on circuit board"></div>
+              <div class="ap-card__body"><span class="ap-badge ap-badge--gold mb-2">Class of 2025 - Sample</span><h3 class="h6">Engineering</h3><p class="small">From a first research project to a funded engineering offer. 's story shows how depth beats breadth.</p><p class="small ap-text-muted mb-0"><i class="bi bi-geo"></i> Admitted to a top engineering program (sample)</p></div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-4 ap-reveal">
+            <article class="ap-card ap-card--hover h-100">
+              <div class="ap-media ap-ratio-16x9"><img src="assets/images/liberal%20arts.jpg" alt="Liberal arts graduates on university campus" loading="lazy"></div>
+              <div class="ap-card__body"><span class="ap-badge ap-badge--gold mb-2">Class of 2025 - Sample</span><h3 class="h6">Liberal Arts</h3><p class="small">A debate champion who learned to write about ideas, not achievements. Her essays finally sounded like her.</p><p class="small ap-text-muted mb-0"><i class="bi bi-geo"></i> Admitted to a selective liberal arts college (sample)</p></div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-4 ap-reveal">
+            <article class="ap-card ap-card--hover h-100">
+              <div class="ap-media ap-ratio-16x9"><img src="assets/images/Scholarship.jpg" alt="Scholarship application and financial aid documents" loading="lazy"></div>
+              <div class="ap-card__body"><span class="ap-badge ap-badge--gold mb-2">Class of 2024 - Sample</span><h3 class="h6">Scholarship</h3><p class="small"> matched her profile to merit scholarships worth more than the cost of the counseling program.</p><p class="small ap-text-muted mb-0"><i class="bi bi-geo"></i> Awarded a merit scholarship (sample)</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HOW IT WORKS -->
+    <section class="ap-section ap-section--lavender" aria-labelledby="how-title">
+      <div class="ap-container">
+        <div class="text-center mb-5 ap-reveal">
+          <span class="ap-eyebrow"><i class="bi bi-signpost-split"></i> How it works</span>
+          <h2 id="how-title" class="mt-2">Five steps from dream to decision</h2>
+        <div class="row g-4 mt-2">
+          <div class="col-12 col-md-6 col-lg ap-reveal"><div class="ap-card ap-card__body h-100 text-center"><span class="ap-step-num mb-3">1</span><h3 class="h6">Discover your goals</h3><p class="small mb-0">We start with your interests, strengths and ambitions to define what success means to you.</p></div></div>
+          <div class="col-12 col-md-6 col-lg ap-reveal"><div class="ap-card ap-card__body h-100 text-center"><span class="ap-step-num mb-3">2</span><h3 class="h6">Meet your counselor</h3><p class="small mb-0">Get matched with a counselor who specialises in your target region and field.</p></div></div>
+          <div class="col-12 col-md-6 col-lg ap-reveal"><div class="ap-card ap-card__body h-100 text-center"><span class="ap-step-num mb-3">3</span><h3 class="h6">Build your strategy</h3><p class="small mb-0">A month-by-month roadmap covering essays, tests, deadlines and scholarships.</p></div></div>
+          <div class="col-12 col-md-6 col-lg ap-reveal"><div class="ap-card ap-card__body h-100 text-center"><span class="ap-step-num mb-3">4</span><h3 class="h6">Refine your application</h3><p class="small mb-0">Draft, review and polish every essay and document with expert feedback.</p></div></div>
+          <div class="col-12 col-md-6 col-lg ap-reveal"><div class="ap-card ap-card__body h-100 text-center"><span class="ap-step-num mb-3">5</span><h3 class="h6">Track your progress</h3><p class="small mb-0">Follow every application, deadline and feedback thread in your dashboard.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FEATURED COUNSELORS -->
+    <section class="ap-section" aria-labelledby="counselors-title">
+      <div class="ap-container">
+        <div class="text-center mb-5 ap-reveal">
+          <span class="ap-eyebrow"><i class="bi bi-people"></i> Meet the team</span>
+          <h2 id="counselors-title" class="mt-2">Counselors who have been there</h2>
+          <p class="mx-auto" style="max-width:60ch">Sample counselor profiles  demo content replaced by real profiles in production.</p>
+        <div class="row g-4 mt-2">
+          <div class="col-12 col-md-6 col-lg-4 ap-reveal"><article class="ap-card ap-card--hover ap-card__body h-100 text-center"><img class="ap-avatar ap-avatar--lg mb-3" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Portrait of sample counselor"><h3 class="h6 mb-1">Dr. Meera Nair</h3><p class="small ap-text-accent fw-semibold">Senior Admissions Strategist</p><p class="small ap-clamp-2">Guides students into top-tier US universities with a focus on authentic storytelling.</p><div class="d-flex justify-content-center gap-2 mt-3"><a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://x.com/login" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="X"><i class="bi bi-twitter-x"></i></a></div></article></div>
+          <div class="col-12 col-md-6 col-lg-4 ap-reveal"><article class="ap-card ap-card--hover ap-card__body h-100 text-center"><img class="ap-avatar ap-avatar--lg mb-3" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" alt="Portrait of sample counselor"><h3 class="h6 mb-1">Rahul Iyer</h3><p class="small ap-text-accent fw-semibold">STEM &amp; Engineering Coach</p><p class="small ap-clamp-2">Specialises in competitive STEM applications and merit scholarship strategy.</p><div class="d-flex justify-content-center gap-2 mt-3"><a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://x.com/login" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="X"><i class="bi bi-twitter-x"></i></a></div></article></div>
+          <div class="col-12 col-md-6 col-lg-4 ap-reveal"><article class="ap-card ap-card--hover ap-card__body h-100 text-center"><img class="ap-avatar ap-avatar--lg mb-3" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80" alt="Portrait of sample counselor"><h3 class="h6 mb-1">Sara Khan</h3><p class="small ap-text-accent fw-semibold">Liberal Arts Mentor</p><p class="small ap-clamp-2">Helps students build distinctive profiles for selective liberal arts colleges.</p><div class="d-flex justify-content-center gap-2 mt-3"><a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://x.com/login" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="X"><i class="bi bi-twitter-x"></i></a></div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. TESTIMONIALS -->
+    <section class="ap-section ap-section--lavender ap-home1-parallax" style="--ap-parallax-image:url('assets/images/bg-parallax.jpg'); background-position: center top;" aria-labelledby="testi-title">
+      <div class="ap-container">
+        <div class="text-center mb-5 ap-reveal">
+          <span class="ap-eyebrow"><i class="bi bi-chat-quote"></i> Testimonials</span>
+          <h2 id="testi-title" class="mt-2">Trusted by students and families</h2>
+        </div>
+        <div class="row g-4 ap-home1-testimonial-grid">
+          <div class="col-12 col-lg-4 ap-reveal"><div class="ap-card ap-card__body h-100 ap-quote ap-home1-testimonial-card d-flex flex-column"><i class="bi bi-quote"></i><p class="mt-2 flex-grow-1">"My counselor helped me find a story I was proud to tell. The process felt manageable instead of overwhelming."</p><div class="d-flex align-items-center gap-3 mt-3 ap-home1-testimonial-profile"><img class="ap-avatar ap-avatar--sm flex-shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Portrait for fictional sample student Maya R." loading="lazy"><div><strong class="d-block small">Maya R.</strong><span class="ap-text-muted small">Student profile (sample)</span></div></div></div></div>
+          <div class="col-12 col-lg-4 ap-reveal"><div class="ap-card ap-card__body h-100 ap-quote ap-home1-testimonial-card d-flex flex-column"><i class="bi bi-quote"></i><p class="mt-2 flex-grow-1">"The scholarship guidance honestly saved my family more than the cost of the program many times over."</p><div class="d-flex align-items-center gap-3 mt-3 ap-home1-testimonial-profile"><img class="ap-avatar ap-avatar--sm flex-shrink-0" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Portrait for fictional sample student Sameer K." loading="lazy"><div><strong class="d-block small">Sameer K.</strong><span class="ap-text-muted small">Student profile (sample)</span></div></div></div></div>
+          <div class="col-12 col-lg-4 ap-reveal"><div class="ap-card ap-card__body h-100 ap-quote ap-home1-testimonial-card d-flex flex-column"><i class="bi bi-quote"></i><p class="mt-2 flex-grow-1">"Practising interviews with real feedback made all the difference. I walked in calm and confident."</p><div class="d-flex align-items-center gap-3 mt-3 ap-home1-testimonial-profile"><img class="ap-avatar ap-avatar--sm flex-shrink-0" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=120&q=80" alt="Portrait for fictional sample student Anika P." loading="lazy"><div><strong class="d-block small">Anika P.</strong><span class="ap-text-muted small">Student profile (sample)</span></div></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FEATURED BLOG -->
+    <section class="ap-section" aria-labelledby="blog-title">
+      <div class="ap-container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-5">
+          <div class="ap-reveal"><span class="ap-eyebrow"><i class="bi bi-journal-text"></i> Admissions blog</span><h2 id="blog-title" class="mt-2 mb-0">Guidance worth reading</h2></div>
+          <a href="blog.html" class="btn-ap btn-ap--outline ap-reveal">All articles <i class="bi bi-arrow-right ap-flip-rtl"></i></a>
+        </div>
+        <div class="row g-4" data-home-blog>
+          <div class="col-12 col-md-4"><article class="ap-card ap-card--hover h-100"><a href="blog-details.html?slug=choosing-the-right-college-fit" class="d-block ap-media ap-ratio-16x9"><img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" alt="College campus"></a><div class="ap-card__body"><span class="ap-badge ap-badge--accent mb-2">College Selection</span><h3 class="h6"><a href="blog-details.html?slug=choosing-the-right-college-fit" class="ap-text-primary">Choosing the Right College: Fit Beats Rankings</a></h3><p class="small ap-clamp-2">Rankings tell one story, but fit decides whether you thrive.</p></div></article></div>
+          <div class="col-12 col-md-4"><article class="ap-card ap-card--hover h-100"><a href="blog-details.html?slug=essay-writing-that-sounds-like-you" class="d-block ap-media ap-ratio-16x9"><img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" alt="Writing an essay"></a><div class="ap-card__body"><span class="ap-badge ap-badge--accent mb-2">Essays</span><h3 class="h6"><a href="blog-details.html?slug=essay-writing-that-sounds-like-you" class="ap-text-primary">Essay Writing That Actually Sounds Like You</a></h3><p class="small ap-clamp-2">Learn a framework for authentic, memorable essays.</p></div></article></div>
+          <div class="col-12 col-md-4"><article class="ap-card ap-card--hover h-100"><a href="blog-details.html?slug=application-deadline-planner" class="d-block ap-media ap-ratio-16x9"><img src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80" alt="Planning deadlines"></a><div class="ap-card__body"><span class="ap-badge ap-badge--accent mb-2">Deadlines</span><h3 class="h6"><a href="blog-details.html?slug=application-deadline-planner" class="ap-text-primary">The Application Deadline Planner Every Student Needs</a></h3><p class="small ap-clamp-2">A month-by-month planner so you never miss a deadline.</p></div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FINAL CTA -->
+    <section class="ap-section ap-section--tight" aria-labelledby="cta-title">
+      <div class="ap-container">
+        <div class="ap-newsletter text-center ap-reveal">
+          <span class="ap-eyebrow" style="background:rgba(255,255,255,.18);color:#fff"><i class="bi bi-stars"></i> Free, no obligation</span>
+          <h2 id="cta-title" class="mt-3">Ready to build your admissions plan?</h2>
+          <p class="mx-auto" style="max-width:60ch">Book a free 30-minute consultation and get a personalised view of your college strategy.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            <button type="button" class="btn-ap btn-ap--gold btn-ap--lg ap-w-auto-sm" data-open-modal="consultModal"><i class="bi bi-calendar2-check"></i> Book a Free Consultation</button>
+            <a href="pricing.html" class="btn-ap btn-ap--outline btn-ap--lg ap-w-auto-sm" style="border-color:#fff;color:#fff">View pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div data-include="components/newsletter.html"></div>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+  <div data-include="components/modal.html"></div>
+  <div data-include="components/toast.html"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="pages/partials-loader.js"></script>
+</body>
+</html>

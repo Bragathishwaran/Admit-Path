@@ -1,0 +1,12 @@
+{
+  "name": "admitpath-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AdmitPath — front-end-only college admissions counseling website (HTML, CSS, Tailwind CSS, Bootstrap 5, vanilla JS).",
+  "scripts": {
+    "serve": "npx --yes serve . -l 5500",
+    "start": "npx --yes serve . -l 5500"
+  },
+  "keywords": ["admitpath", "college-admissions", "counseling", "tailwind", "bootstrap", "vanilla-js"],
+  "license": "MIT"
+}

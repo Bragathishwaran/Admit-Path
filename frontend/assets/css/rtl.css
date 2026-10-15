@@ -1,0 +1,41 @@
+/* =====================================================================
+   AdmitPath — RTL support
+   Most layout uses CSS logical properties so it flips automatically when
+   <html dir="rtl">. These rules fix the few remaining directional cases.
+   ===================================================================== */
+
+[dir="rtl"] .ap-nav__link .bi-chevron-down { transform: none; }
+
+/* Directional icons that must mirror */
+[dir="rtl"] .ap-flip-rtl { transform: scaleX(-1); }
+
+/* Non-directional icons/brand must NOT mirror */
+[dir="rtl"] .ap-no-flip { transform: none !important; }
+
+/* Timeline rail + dots already use logical props; ensure text aligns start */
+[dir="rtl"] .ap-timeline__item { text-align: right; }
+[dir="rtl"] .ap-activity__item { text-align: right; }
+
+/* Table header alignment */
+[dir="rtl"] .ap-table thead th,
+[dir="rtl"] .ap-table tbody td { text-align: right; }
+
+/* Dropdown menu */
+[dir="rtl"] .ap-dropdown__menu { text-align: right; }
+
+/* Back-to-top / arrow links */
+[dir="rtl"] .ap-arrow-link .bi { transform: scaleX(-1); }
+
+/* Notification panel "view schedule" arrow mirrors in RTL */
+[dir="rtl"] .ap-notifications__footer .bi { transform: scaleX(-1); }
+
+/* Select caret position handled in style.css via [dir="rtl"] */
+
+/* Numbers should remain LTR even in RTL context for phone/dates */
+[dir="rtl"] .ap-num,
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] input[type="email"] {
+  direction: ltr;
+  text-align: right;
+}
+[dir="rtl"] input[type="tel"] { text-align: left; }

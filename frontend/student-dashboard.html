@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Dashboard - AdmitPath</title>
+  <meta name="description" content="Your AdmitPath student dashboard: application progress, checklist, deadlines, essays and meetings.">
+  <link rel="canonical" href="https://www.admitpath.example/student-dashboard.html">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.13"></script>
+  <script>tailwind.config={corePlugins:{preflight:false},theme:{extend:{colors:{jade:{DEFAULT:'#0E7C6B',600:'#12907C'},coral:'#E4572E',mist:'#E7F3F0',gold:'#E1A93E'}}}}</script>
+  <link href="assets/css/variables.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/tailwind.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/responsive.css" rel="stylesheet">
+  <link href="assets/css/dashboard.css" rel="stylesheet">
+  <link href="assets/css/rtl.css" rel="stylesheet">
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+</head>
+<body data-page="student-dashboard" data-page-title="Dashboard">
+  <div class="ap-app">
+    <aside class="ap-sidebar" id="dashSidebar">
+      <a href="index.html" class="ap-sidebar__brand">
+        <svg class="ap-brand__mark ap-no-flip" viewBox="0 0 240 60" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(10, 10)">
+          <circle cx="20" cy="20" r="20" fill="#0F172A" />
+          <polygon points="20,8 31,16 20,24 9,16" fill="#F59E0B" />
+          <path d="M13,20 v5 c0,3 7,3 7,3 s7,0 7,-3 v-5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+          <circle cx="27" cy="21" r="1.5" fill="#F59E0B" />
+        </g>
+        <text x="60" y="27" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#0F172A">Admit<tspan fill="#F59E0B">Path</tspan></text>
+        <text x="60" y="44" font-family="'Inter', sans-serif" font-weight="500" font-size="10" fill="#64748B" letter-spacing="1.5">ADMISSIONS COUNSELING</text>
+      </svg>
+        <span class="ap-brand__name">Admit<span>Path</span></span>
+      </a>
+      <span class="ap-sidebar__section">Main</span>
+      <a class="ap-sidebar__link is-active" href="student-dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a>
+      <a class="ap-sidebar__link" href="application-checklist.html"><i class="bi bi-list-check"></i> Application Checklist</a>
+      <a class="ap-sidebar__link" href="essay-feedback.html"><i class="bi bi-file-earmark-text"></i> Essay Feedback</a>
+      <a class="ap-sidebar__link" href="meetings.html"><i class="bi bi-calendar-event"></i> Meetings <span class="ap-badge ap-badge--accent">2</span></a>
+      <span class="ap-sidebar__section">Account</span>
+      <a class="ap-sidebar__link" href="settings.html"><i class="bi bi-gear"></i> Settings</a>
+      <a class="ap-sidebar__link" href="#" data-logout><i class="bi bi-box-arrow-right"></i> Sign out</a>
+    </aside>
+
+    <div class="ap-main">
+      <header class="ap-topbar">
+        <button type="button" class="ap-icon-btn" data-sidebar-toggle aria-controls="dashSidebar" aria-expanded="false" aria-label="Open dashboard menu"><i class="bi bi-list"></i></button>
+        <h1 class="ap-topbar__title">Dashboard</h1>
+        <div class="ms-auto d-flex align-items-center gap-2">
+          <div class="ap-topbar__search d-none d-md-block">
+            <i class="bi bi-search"></i>
+            <input class="ap-input" type="search" placeholder="Search applications, tasks…" aria-label="Search">
+          </div>
+          <div class="ap-notifications" data-notifications>
+            <button type="button" class="ap-icon-btn position-relative" data-notifications-toggle aria-controls="notificationPanel" aria-expanded="false" aria-label="Notifications"><i class="bi bi-bell"></i><span class="ap-badge ap-badge--error position-absolute" style="top:-6px;inset-inline-end:-6px" data-notif-count hidden>0</span></button>
+            <section class="ap-notifications__panel" id="notificationPanel" data-notifications-panel hidden aria-label="Notifications" aria-live="polite">
+              <div class="ap-notifications__head"><h2>Notifications</h2><span class="small ap-text-muted" data-notifications-summary></span></div>
+              <ul class="ap-notifications__list" data-notifications-list></ul>
+              <a class="ap-notifications__footer" href="meetings.html">View your schedule <i class="bi bi-arrow-right"></i></a>
+            </section>
+          </div>
+          <button type="button" class="ap-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+          <button type="button" class="ap-icon-btn" data-rtl-toggle aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <a href="settings.html" class="ap-icon-btn" aria-label="Settings"><i class="bi bi-gear"></i></a>
+          <img class="ap-avatar ap-avatar--sm" src="assets/images/placeholders/avatar.svg" alt="Your profile">
+        </div>
+      </header>
+
+      <div class="ap-content" data-student-dashboard>
+        <div data-dash-loading class="text-center py-5"><span class="ap-spinner ap-text-accent"></span><p class="ap-text-muted mt-2">Loading your dashboard…</p></div>
+
+        <div data-dash-error hidden class="ap-empty"><img src="assets/images/placeholders/empty-state.svg" alt=""><h2 class="h5">Something went wrong</h2><p data-dash-error-msg></p><button class="btn-ap btn-ap--primary" onclick="location.reload()">Retry</button></div>
+
+        <div data-dash-content hidden>
+          <!-- Welcome -->
+          <section class="ap-widget mb-4 ap-reveal">
+            <div class="row g-3 align-items-center">
+              <div class="col-12 col-lg-8">
+                <span class="ap-eyebrow"><i class="bi bi-stars"></i> Welcome back</span>
+                <h2 class="h3 mt-2 mb-1">Hi <span data-welcome-name>Student</span>, let's keep your applications on track.</h2>
+                <p class="mb-0">Here is a snapshot of everything happening across your applications this week.</p>
+              </div>
+              <div class="col-12 col-lg-4 text-lg-end">
+                <button class="btn-ap btn-ap--primary" data-open-modal="consultModal"><i class="bi bi-calendar2-check"></i> Book a session</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Stat cards -->
+          <section class="row g-3 mb-4">
+            <div class="col-6 col-lg-3 ap-reveal"><div class="ap-widget ap-stat-card h-100"><span class="ap-stat-card__icon" style="background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)"><i class="bi bi-mortarboard"></i></span><span class="ap-stat-card__value" data-stat-applications>0</span><span class="ap-stat-card__label">Active applications</span></div></div>
+            <div class="col-6 col-lg-3 ap-reveal"><div class="ap-widget ap-stat-card h-100"><span class="ap-stat-card__icon" style="background:color-mix(in srgb,var(--success) 14%,transparent);color:var(--success)"><i class="bi bi-graph-up-arrow"></i></span><span class="ap-stat-card__value" data-stat-progress>0%</span><span class="ap-stat-card__label">Overall progress</span></div></div>
+            <div class="col-6 col-lg-3 ap-reveal"><div class="ap-widget ap-stat-card h-100"><span class="ap-stat-card__icon" style="background:color-mix(in srgb,var(--gold) 22%,transparent);color:var(--ap-gold-600)"><i class="bi bi-file-earmark-text"></i></span><span class="ap-stat-card__value" data-stat-essays>0</span><span class="ap-stat-card__label">Essay drafts</span></div></div>
+            <div class="col-6 col-lg-3 ap-reveal"><div class="ap-widget ap-stat-card h-100"><span class="ap-stat-card__icon" style="background:color-mix(in srgb,var(--info) 14%,transparent);color:var(--info)"><i class="bi bi-calendar-event"></i></span><span class="ap-stat-card__value" data-stat-meetings>0</span><span class="ap-stat-card__label">Upcoming meetings</span></div></div>
+          </section>
+
+          <div class="row g-4">
+            <!-- Progress + checklist -->
+            <div class="col-12 col-lg-4 ap-reveal">
+              <div class="ap-widget h-100">
+                <div class="ap-widget__head"><h2 class="ap-widget__title">Checklist progress</h2><a href="application-checklist.html" class="ap-link-inline small">Open</a></div>
+                <div class="text-center">
+                  <div class="ap-ring mx-auto" data-progress-ring style="--val:0"><div class="ap-ring__inner"><span class="ap-ring__value">0%</span></div></div>
+                  <p class="mt-3 mb-1"><strong data-checklist-ratio>0/0</strong> tasks complete</p>
+                  <div class="ap-progress"><div class="ap-progress__bar" data-progress-bar style="width:0%"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- University application cards -->
+            <div class="col-12 col-lg-8 ap-reveal">
+              <div class="ap-widget h-100">
+                <div class="ap-widget__head"><h2 class="ap-widget__title">Your applications</h2><a href="services.html" class="ap-link-inline small">Add new</a></div>
+                <div class="row g-3" data-applications></div>
+              </div>
+            </div>
+
+            <!-- Deadlines -->
+            <div class="col-12 col-lg-6 ap-reveal">
+              <div class="ap-widget h-100">
+                <div class="ap-widget__head"><h2 class="ap-widget__title">Upcoming deadlines</h2><a href="application-checklist.html" class="ap-link-inline small">Manage</a></div>
+                <ul class="list-unstyled m-0" data-deadlines></ul>
+              </div>
+            </div>
+
+            <!-- Meetings -->
+            <div class="col-12 col-lg-6 ap-reveal">
+              <div class="ap-widget h-100">
+                <div class="ap-widget__head"><h2 class="ap-widget__title">Upcoming meetings</h2><a href="meetings.html" class="ap-link-inline small">View all</a></div>
+                <div data-meetings></div>
+              </div>
+            </div>
+
+            <!-- Quick actions -->
+            <div class="col-12 col-lg-5 ap-reveal">
+              <div class="ap-widget h-100">
+                <h2 class="ap-widget__title mb-3">Quick actions</h2>
+                <div class="d-grid gap-2">
+                  <a href="essay-feedback.html" class="btn-ap btn-ap--outline"><i class="bi bi-upload"></i> Upload an essay draft</a>
+                  <a href="application-checklist.html" class="btn-ap btn-ap--outline"><i class="bi bi-plus-circle"></i> Update checklist</a>
+                  <button class="btn-ap btn-ap--outline" data-open-modal="consultModal"><i class="bi bi-calendar-plus"></i> Book a meeting</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity -->
+            <div class="col-12 col-lg-7 ap-reveal">
+              <div class="ap-widget h-100">
+                <h2 class="ap-widget__title mb-3">Recent activity</h2>
+                <ul class="ap-activity" data-activity></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-include="components/modal.html"></div>
+  <div data-include="components/toast.html"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="pages/partials-loader.js"></script>
+</body>
+</html>

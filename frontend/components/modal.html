@@ -1,0 +1,51 @@
+<!-- ============ AdmitPath reusable consultation modal ============ -->
+<div class="ap-modal" id="consultModal" role="dialog" aria-modal="true" aria-labelledby="consultModalTitle">
+  <div class="ap-modal__overlay" data-modal-close></div>
+  <div class="ap-modal__dialog">
+    <div class="ap-modal__head">
+      <h3 id="consultModalTitle" class="h5 mb-0"><i class="bi bi-calendar2-check ap-text-accent"></i> Book a free consultation</h3>
+      <button type="button" class="ap-icon-btn" data-modal-close aria-label="Close"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <form data-consult-form novalidate>
+      <div class="ap-modal__body">
+        <p class="small">Tell us a little about yourself and a counselor will reach out to schedule your session.</p>
+        <div class="ap-field">
+          <label class="ap-label" for="consultName">Full name <span class="req">*</span></label>
+          <input class="ap-input" type="text" id="consultName" name="name" data-validate="name" required placeholder="e.g. Ranjith Kumar" autocomplete="name">
+          <div class="ap-error-msg" id="consultNameError"></div>
+        </div>
+        <div class="row g-3">
+          <div class="col-12 col-sm-6">
+            <div class="ap-field mb-0">
+              <label class="ap-label" for="consultEmail">Email <span class="req">*</span></label>
+              <input class="ap-input" type="email" id="consultEmail" name="email" data-validate="email" required placeholder="you@example.com" autocomplete="email">
+              <div class="ap-error-msg" id="consultEmailError"></div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="ap-field mb-0">
+              <label class="ap-label" for="consultMobile">Mobile <span class="req">*</span></label>
+              <input class="ap-input" type="tel" id="consultMobile" name="mobile" data-validate="mobile" inputmode="numeric" maxlength="10" required placeholder="10-digit number" autocomplete="tel">
+              <div class="ap-error-msg" id="consultMobileError"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ap-field mt-3 mb-0">
+          <label class="ap-label" for="consultTopic">What would you like help with?</label>
+          <select class="ap-select" id="consultTopic" name="topic">
+            <option value="General enquiry">General enquiry</option>
+            <option>College application strategy</option>
+            <option>Essays &amp; personal statements</option>
+            <option>University selection</option>
+            <option>Scholarships &amp; financial aid</option>
+            <option>Interview preparation</option>
+          </select>
+        </div>
+      </div>
+      <div class="ap-modal__foot">
+        <button type="button" class="btn-ap btn-ap--outline" data-modal-close>Cancel</button>
+        <button type="submit" class="btn-ap btn-ap--primary"><i class="bi bi-send"></i> Request consultation</button>
+      </div>
+    </form>
+  </div>
+</div>

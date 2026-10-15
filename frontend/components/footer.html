@@ -1,0 +1,79 @@
+<!-- ============ AdmitPath shared footer ============ -->
+<footer class="ap-footer" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="visually-hidden">Site footer</h2>
+  <div class="ap-container" style="padding-block: clamp(2.5rem,5vw,4rem)">
+    <div class="row g-4 g-lg-5">
+      <div class="col-12 col-lg-4">
+        <a href="index.html" class="ap-brand mb-3">
+          <svg class="ap-brand__mark ap-no-flip" viewBox="0 0 240 60" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(10, 10)">
+              <circle cx="20" cy="20" r="20" fill="#0F172A" />
+              <polygon points="20,8 31,16 20,24 9,16" fill="#F59E0B" />
+              <path d="M13,20 v5 c0,3 7,3 7,3 s7,0 7,-3 v-5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+              <circle cx="27" cy="21" r="1.5" fill="#F59E0B" />
+            </g>
+            <text x="60" y="27" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#0F172A">Admit<tspan fill="#F59E0B">Path</tspan></text>
+            <text x="60" y="44" font-family="'Inter', sans-serif" font-weight="700" font-size="11" fill="#FFFFFF" letter-spacing="1.5">ADMISSIONS COUNSELING</text>
+          </svg>
+        </a>
+        <p class="ap-clamp-3" style="max-width:34ch">Guiding students to their dream colleges with personalised, ethical admissions counseling. Build a strategy, tell your story, and track every application in one place.</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="AdmitPath on Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="AdmitPath on LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.youtube.com/signin" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="AdmitPath on YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="https://x.com/login" target="_blank" rel="noopener noreferrer" class="ap-social" aria-label="AdmitPath on X"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h3 class="ap-footer__title">Company</h3>
+        <a class="ap-footer__link" href="index.html">Home</a>
+        <a class="ap-footer__link" href="home-2.html">Success Stories</a>
+        <a class="ap-footer__link" href="about.html">About Us</a>
+        <a class="ap-footer__link" href="services.html">Services</a>
+        <a class="ap-footer__link" href="pricing.html">Pricing</a>
+        <a class="ap-footer__link" href="contact.html">Contact</a>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h3 class="ap-footer__title">Resources</h3>
+        <a class="ap-footer__link" href="blog.html">Blog</a>
+        <a class="ap-footer__link" href="blog-details.html?slug=essay-writing-that-sounds-like-you">Essay Guide</a>
+        <a class="ap-footer__link" href="blog-details.html?slug=application-deadline-planner">Deadline Planner</a>
+        <a class="ap-footer__link" href="blog-details.html?slug=scholarships-worth-your-time">Scholarship Tips</a>
+        <a class="ap-footer__link" href="login.html">Student Login</a>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <h3 class="ap-footer__title">Stay in the loop</h3>
+        <p class="small mb-2">Weekly admissions tips, deadlines and scholarship alerts.</p>
+        <form class="ap-footer-news" data-newsletter-form novalidate>
+          <div class="ap-field mb-2">
+            <label class="visually-hidden" for="footerNewsletterEmail">Email address</label>
+            <input class="ap-input" type="email" id="footerNewsletterEmail" name="email" data-validate="email" required placeholder="you@example.com" autocomplete="email">
+            <div class="ap-error-msg" id="footerNewsletterEmailError"></div>
+          </div>
+          <button class="btn-ap btn-ap--accent btn-ap--block" type="submit"><i class="bi bi-envelope-paper"></i> Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="ap-footer__bottom">
+    <div class="ap-container d-flex flex-wrap justify-content-between align-items-center gap-2" style="padding-block:1rem">
+      <p class="mb-0 small">© <span data-year>2026</span> AdmitPath. All rights reserved.</p>
+      <div class="d-flex flex-wrap gap-3">
+        <a class="small ap-text-muted" href="#">Privacy Policy</a>
+        <a class="small ap-text-muted" href="#">Terms of Service</a>
+        <a class="small ap-text-muted" href="sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="ap-icon-btn" data-back-to-top aria-label="Back to top" style="position:fixed;inset-inline-end:1rem;bottom:1rem;z-index:900;background:var(--surface);box-shadow:var(--shadow);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;position:fixed">
+  <i class="bi bi-arrow-up"></i>
+</button>
+<style>
+  [data-back-to-top].is-visible { opacity: 1 !important; visibility: visible !important; }
+</style>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Application Checklist - AdmitPath</title>
+  <meta name="description" content="Track every task, deadline and document for each of your college applications.">
+  <link rel="canonical" href="https://www.admitpath.example/application-checklist.html">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.13"></script>
+  <script>tailwind.config={corePlugins:{preflight:false},theme:{extend:{colors:{jade:{DEFAULT:'#0E7C6B',600:'#12907C'},coral:'#E4572E',mist:'#E7F3F0',gold:'#E1A93E'}}}}</script>
+  <link href="assets/css/variables.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/tailwind.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/responsive.css" rel="stylesheet">
+  <link href="assets/css/dashboard.css" rel="stylesheet">
+  <link href="assets/css/rtl.css" rel="stylesheet">
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+</head>
+<body data-page="application-checklist" data-page-title="Application Checklist">
+  <div class="ap-app">
+    <aside class="ap-sidebar" id="dashSidebar">
+      <a href="index.html" class="ap-sidebar__brand">
+        <svg class="ap-brand__mark ap-no-flip" viewBox="0 0 240 60" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(10, 10)">
+          <circle cx="20" cy="20" r="20" fill="#0F172A" />
+          <polygon points="20,8 31,16 20,24 9,16" fill="#F59E0B" />
+          <path d="M13,20 v5 c0,3 7,3 7,3 s7,0 7,-3 v-5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+          <circle cx="27" cy="21" r="1.5" fill="#F59E0B" />
+        </g>
+        <text x="60" y="27" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#0F172A">Admit<tspan fill="#F59E0B">Path</tspan></text>
+        <text x="60" y="44" font-family="'Inter', sans-serif" font-weight="500" font-size="10" fill="#64748B" letter-spacing="1.5">ADMISSIONS COUNSELING</text>
+      </svg>
+        <span class="ap-brand__name">Admit<span>Path</span></span>
+      </a>
+      <span class="ap-sidebar__section">Main</span>
+      <a class="ap-sidebar__link" href="student-dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a>
+      <a class="ap-sidebar__link is-active" href="application-checklist.html"><i class="bi bi-list-check"></i> Application Checklist</a>
+      <a class="ap-sidebar__link" href="essay-feedback.html"><i class="bi bi-file-earmark-text"></i> Essay Feedback</a>
+      <a class="ap-sidebar__link" href="meetings.html"><i class="bi bi-calendar-event"></i> Meetings</a>
+      <span class="ap-sidebar__section">Account</span>
+      <a class="ap-sidebar__link" href="settings.html"><i class="bi bi-gear"></i> Settings</a>
+      <a class="ap-sidebar__link" href="index.html"><i class="bi bi-house"></i> Back to website</a>
+      <a class="ap-sidebar__link" href="#" data-logout><i class="bi bi-box-arrow-right"></i> Sign out</a>
+    </aside>
+
+    <div class="ap-main">
+      <header class="ap-topbar">
+        <button type="button" class="ap-icon-btn d-lg-none" data-sidebar-toggle aria-label="Open sidebar"><i class="bi bi-list"></i></button>
+        <h1 class="ap-topbar__title">Application Checklist</h1>
+        <div class="ms-auto d-flex align-items-center gap-2">
+          <button type="button" class="ap-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+          <button type="button" class="ap-icon-btn" data-rtl-toggle aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <img class="ap-avatar ap-avatar--sm" src="assets/images/placeholders/avatar.svg" alt="Your profile">
+        </div>
+      </header>
+
+      <div class="ap-content" data-checklist>
+        <div class="row g-4">
+          <div class="col-12 col-lg-8">
+            <div class="ap-widget mb-4">
+              <div class="ap-widget__head ap-checklist__head flex-wrap gap-3">
+                <h2 class="ap-widget__title mb-0">Tasks</h2>
+                <div class="d-flex flex-wrap gap-2 align-items-center ap-checklist__actions">
+                  <label class="visually-hidden" for="checklistAppSelect">Filter by application</label>
+                  <select class="ap-select" id="checklistAppSelect" data-checklist-app></select>
+                  <button class="btn-ap btn-ap--primary btn-ap--sm" data-open-modal="addTaskModal"><i class="bi bi-plus-lg"></i> Add task</button>
+                </div>
+              </div>
+              <div data-checklist-list class="d-grid gap-2"></div>
+              <div data-checklist-empty hidden class="ap-empty"><img src="assets/images/placeholders/empty-state.svg" alt=""><p class="mb-2">No tasks for this application yet.</p><button class="btn-ap btn-ap--outline btn-ap--sm" data-open-modal="addTaskModal">Add your first task</button></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div class="ap-widget mb-4 ap-reveal">
+              <h2 class="ap-widget__title mb-3">Progress overview</h2>
+              <div class="d-flex justify-content-between align-items-center mb-2"><span class="ap-text-muted small">Completion</span><strong data-checklist-progress>0%</strong></div>
+              <div class="ap-progress mb-3"><div class="ap-progress__bar" data-checklist-bar style="width:0%"></div></div>
+              <p class="small ap-text-muted mb-0" data-checklist-ratio>0/0 tasks</p>
+              <hr class="ap-divider my-3">
+              <h3 class="h6 mb-2">Legend</h3>
+              <ul class="list-unstyled small m-0">
+                <li class="mb-1"><span class="ap-badge ap-badge--neutral">Pending</span> not started</li>
+                <li class="mb-1"><span class="ap-badge ap-badge--warning">In Progress</span> underway</li>
+                <li><span class="ap-badge ap-badge--success">Completed</span> done</li>
+              </ul>
+            </div>
+            <div class="ap-widget ap-reveal">
+              <h2 class="ap-widget__title mb-3">Deadline reminders</h2>
+              <p class="small ap-text-muted">Items due within 7 days are highlighted in <span class="ap-text-error fw-semibold">red</span> and marked overdue once the date passes. Tick a task to update progress instantly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add task modal -->
+  <div class="ap-modal" id="addTaskModal" role="dialog" aria-modal="true" aria-labelledby="addTaskTitle">
+    <div class="ap-modal__overlay" data-modal-close></div>
+    <div class="ap-modal__dialog">
+      <div class="ap-modal__head"><h3 class="h5 mb-0" id="addTaskTitle"><i class="bi bi-plus-circle ap-text-accent"></i> Add checklist task</h3><button type="button" class="ap-icon-btn" data-modal-close aria-label="Close"><i class="bi bi-x-lg"></i></button></div>
+      <form data-add-task-form novalidate>
+        <div class="ap-modal__body">
+          <div class="ap-field">
+            <label class="ap-label" for="taskApp">Application <span class="req">*</span></label>
+            <select class="ap-select" id="taskApp" name="applicationId" data-validate="select" required></select>
+            <div class="ap-error-msg" id="taskAppError"></div>
+          </div>
+          <div class="ap-field">
+            <label class="ap-label" for="taskTitle">Task title <span class="req">*</span></label>
+            <input class="ap-input" type="text" id="taskTitle" name="title" data-validate="text" required placeholder="e.g. Draft 'Why this college' essay">
+            <div class="ap-error-msg" id="taskTitleError"></div>
+          </div>
+          <div class="row g-3">
+            <div class="col-12 col-sm-6">
+              <div class="ap-field mb-0">
+                <label class="ap-label" for="taskPriority">Priority</label>
+                <select class="ap-select" id="taskPriority" name="priority"><option>High</option><option selected>Medium</option><option>Low</option></select>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="ap-field mb-0">
+                <label class="ap-label" for="taskDue">Due date <span class="req">*</span></label>
+                <input class="ap-input" type="date" id="taskDue" name="dueDate" required>
+                <div class="ap-error-msg" id="taskDueError"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ap-field mt-3 mb-0">
+            <label class="ap-label" for="taskCategory">Category</label>
+            <select class="ap-select" id="taskCategory" name="category"><option>Essays</option><option>Documents</option><option>Recommendations</option><option>Interviews</option><option>Financial Aid</option><option>Planning</option><option selected>General</option></select>
+          </div>
+        </div>
+        <div class="ap-modal__foot"><button type="button" class="btn-ap btn-ap--outline" data-modal-close>Cancel</button><button type="submit" class="btn-ap btn-ap--primary">Add task</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div data-include="components/toast.html"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/checklist.js"></script>
+  <script src="pages/partials-loader.js"></script>
+</body>
+</html>

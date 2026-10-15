@@ -1,0 +1,110 @@
+/* =====================================================================
+   AdmitPath — Design Tokens / CSS Variables
+   Central source of truth for colors, spacing, radii, shadows, type.
+   Light is the default theme; dark theme overrides live in [data-theme="dark"].
+   ===================================================================== */
+
+:root {
+  /* ---- Brand palette (raw) ---- */
+  /* Jade & Coral — light theme identity */
+  --ap-jade: #0e7c6b;
+  --ap-jade-700: #0a5e51;
+  --ap-jade-600: #12907c;
+  --ap-coral: #e4572e;
+  --ap-coral-600: #c93f1b;
+  --ap-mist: #e7f3f0;
+  --ap-gold: #e1a93e;
+  --ap-gold-600: #c69028;
+  --ap-bg: #f6faf9;
+  --ap-surface: #ffffff;
+  --ap-text: #112723;
+  --ap-text-2: #5c716c;
+  --ap-border: #e0ebe7;
+  --ap-success: #1b9c5a;
+  --ap-error: #d64545;
+  --ap-warning: #c07a12;
+  --ap-info: #0e7490;
+
+  /* ---- Semantic tokens (light) ---- */
+  --bg: var(--ap-bg);
+  --bg-elevated: var(--ap-mist);
+  --surface: var(--ap-surface);
+  --surface-2: #ffffff;
+  --text: var(--ap-text);
+  --text-muted: var(--ap-text-2);
+  --border-color: var(--ap-border);
+  --primary: var(--ap-jade);
+  --primary-hover: var(--ap-jade-700);
+  --accent: var(--ap-coral);
+  --accent-hover: var(--ap-coral-600);
+  --gold: var(--ap-gold);
+  --success: var(--ap-success);
+  --error: var(--ap-error);
+  --warning: var(--ap-warning);
+  --info: var(--ap-info);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --header-border: var(--ap-border);
+  --shadow-color: 168 30% 14%;
+  --overlay: rgba(17, 39, 35, 0.55);
+
+  /* ---- Typography ---- */
+  --font-heading: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* ---- Radii ---- */
+  --radius-sm: 0.5rem;
+  --radius: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 1px 2px rgba(23, 32, 51, 0.06), 0 1px 3px rgba(23, 32, 51, 0.05);
+  --shadow: 0 8px 24px rgba(23, 32, 51, 0.08);
+  --shadow-lg: 0 20px 45px rgba(23, 32, 51, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(228, 87, 46, 0.35);
+
+  /* ---- Layout ---- */
+  --header-height: 72px;
+  --container-max: 1200px;
+  --section-y: clamp(2.5rem, 4vw, 4rem);
+  --sidebar-width: 264px;
+}
+
+/* ---- Dark theme ---- */
+[data-theme="dark"] {
+  --bg: #0a1512;
+  --bg-elevated: #10201c;
+  --surface: #10201c;
+  --surface-2: #162a26;
+  --text: #e6f1ee;
+  --text-muted: #93a8a2;
+  --border-color: #213832;
+  --primary: #2fd4b4;
+  --primary-hover: #5be3c8;
+  --accent: #ff8a5c;
+  --accent-hover: #ffa57d;
+  --gold: #f0c263;
+  --success: #4ade80;
+  --error: #f87171;
+  --warning: #fbbf24;
+  --info: #38bdf8;
+  --header-bg: rgba(10, 21, 18, 0.85);
+  --header-border: #213832;
+  --overlay: rgba(3, 8, 7, 0.72);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 55px rgba(0, 0, 0, 0.55);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

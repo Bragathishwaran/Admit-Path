@@ -1,0 +1,300 @@
+/* =====================================================================
+   AdmitPath — Dashboard styles
+   Used by student, counselor and admin dashboards + inner app pages.
+   ===================================================================== */
+
+.ap-app { display: flex; min-height: 100vh; background: var(--bg); }
+
+/* Sidebar */
+.ap-sidebar {
+  width: var(--sidebar-width);
+  flex: 0 0 var(--sidebar-width);
+  background: var(--surface);
+  border-inline-end: 1px solid var(--border-color);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  z-index: 20;
+}
+@media (min-width: 992px) {
+  .ap-sidebar { transition: margin-inline-start 0.28s ease; }
+  .ap-sidebar.is-collapsed { margin-inline-start: calc(var(--sidebar-width) * -1); }
+}
+.ap-sidebar__brand { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem; border: 0; border-radius: var(--radius); margin-bottom: 0.5rem; background: linear-gradient(120deg, var(--ap-jade), var(--ap-coral)); }
+.ap-sidebar__brand .ap-brand__mark { width: 100%; max-width: none; height: auto; flex: 0 0 100%; }
+.ap-sidebar__brand .ap-brand__name { display: none; }
+.ap-sidebar__section { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 1rem 0.75rem 0.35rem; }
+.ap-sidebar__link {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.6rem 0.75rem; border-radius: var(--radius-sm);
+  color: var(--text); font-weight: 600; font-size: 0.92rem;
+  transition: background 0.16s ease, color 0.16s ease;
+}
+.ap-sidebar__link .bi { font-size: 1.1rem; color: var(--text-muted); width: 1.25rem; text-align: center; }
+.ap-sidebar__link:hover { background: var(--bg-elevated); color: var(--accent); }
+.ap-sidebar__link:hover .bi { color: var(--accent); }
+.ap-sidebar__link.is-active { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
+.ap-sidebar__link.is-active .bi { color: var(--accent); }
+.ap-sidebar__link .ap-badge { margin-inline-start: auto; }
+
+/* Main area */
+.ap-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
+
+.ap-topbar {
+  position: sticky; top: 0; z-index: 15;
+  height: var(--header-height);
+  display: flex; align-items: center; gap: 1rem;
+  padding-inline: clamp(1rem, 3vw, 1.75rem);
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+.ap-topbar__title { font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.ap-topbar__search { position: relative; max-width: 320px; flex: 1; }
+.ap-topbar__search .bi { position: absolute; inset-inline-start: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+.ap-topbar__search input { padding-inline-start: 2.3rem; }
+
+/* Topbar action group: robust alignment without relying on CDN utilities.
+   Bootstrap's `.ms-auto` is physical (margin-left:auto !important); reset it
+   and use the logical start margin so the group pins to the correct edge in
+   both LTR and RTL instead of being centered. */
+.ap-topbar > .ms-auto { margin-left: 0 !important; margin-inline-start: auto !important; display: flex; align-items: center; gap: 0.5rem; }
+
+/* Notifications popover */
+.ap-notifications { position: relative; }
+.ap-notifications__panel {
+  position: absolute; inset-block-start: calc(100% + 0.75rem); inset-inline-end: 0;
+  z-index: 30; width: min(22rem, calc(100vw - 2rem)); padding: 1rem;
+  background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.ap-notifications__panel[hidden] { display: none; }
+.ap-notifications__head { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; padding-bottom: .7rem; border-bottom: 1px solid var(--border-color); }
+.ap-notifications__head h2 { margin: 0; font: 700 1rem var(--font-heading); }
+.ap-notifications__list { list-style: none; padding: 0; margin: 0; max-height: 20rem; overflow-y: auto; }
+.ap-notifications__item { display: flex; gap: .75rem; padding: .85rem .1rem; border-bottom: 1px solid var(--border-color); }
+.ap-notifications__item:last-child { border-bottom: 0; }
+.ap-notifications__item-icon { flex: 0 0 2.25rem; width: 2.25rem; height: 2.25rem; display: grid; place-items: center; border-radius: 50%; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.ap-notifications__item p { margin: 0 0 .25rem; font-size: .85rem; color: var(--text); }
+.ap-notifications__item time { color: var(--text-muted); font-size: .75rem; }
+.ap-notifications__item.is-unread { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+.ap-notifications__empty { padding: 1rem .1rem; color: var(--text-muted); font-size: .875rem; }
+.ap-notifications__footer { display: flex; justify-content: space-between; align-items: center; padding-top: .75rem; border-top: 1px solid var(--border-color); font-size: .82rem; font-weight: 600; color: var(--accent); }
+
+/* Keep the notification dropdown inside the viewport on narrow/medium
+   screens by anchoring it to the top bar instead of the bell button, and
+   capping its width to the available space so it never overflows. */
+@media (max-width: 991.98px) {
+  .ap-notifications { position: static; }
+  .ap-notifications__panel {
+    inset-inline-end: clamp(0.75rem, 3vw, 1.75rem);
+    width: min(22rem, calc(100% - 2rem));
+  }
+}
+
+.ap-content { padding: clamp(0.875rem, 3vw, 2rem); flex: 1; }
+
+/* Stat cards */
+.ap-widget {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: clamp(0.875rem, 2vw, 1.25rem);
+  box-shadow: var(--shadow-sm);
+}
+.ap-widget__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.ap-widget__title { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; margin: 0; }
+.ap-stat-card { display: flex; flex-direction: column; gap: 0.35rem; }
+.ap-stat-card__icon { width: 3rem; height: 3rem; border-radius: var(--radius); display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+.ap-stat-card__value { font-family: var(--font-heading); font-weight: 800; font-size: 1.9rem; line-height: 1; color: var(--text); }
+.ap-stat-card__label { color: var(--text-muted); font-size: 0.85rem; }
+
+/* Progress */
+.ap-progress { height: 9px; border-radius: var(--radius-pill); background: var(--bg-elevated); overflow: hidden; }
+.ap-progress__bar { height: 100%; border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--primary), var(--accent)); transition: width 0.5s ease; }
+.ap-progress__bar--gold { background: linear-gradient(90deg, var(--gold), var(--ap-gold-600)); }
+.ap-progress__bar--success { background: var(--success); }
+
+/* Ring progress */
+.ap-ring { --val: 0; width: 120px; height: 120px; border-radius: 50%; display: grid; place-items: center;
+  background: conic-gradient(var(--accent) calc(var(--val) * 1%), var(--bg-elevated) 0); }
+.ap-ring__inner { width: 92px; height: 92px; border-radius: 50%; background: var(--surface); display: grid; place-items: center; }
+.ap-ring__value { font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; }
+
+/* Data table */
+.ap-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.ap-table thead th {
+  text-align: start; font-family: var(--font-heading); font-weight: 700; font-size: 0.78rem;
+  text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);
+  padding: 0.75rem 0.9rem; border-bottom: 1px solid var(--border-color); white-space: nowrap;
+}
+.ap-table tbody td { padding: 0.85rem 0.9rem; border-bottom: 1px solid var(--border-color); color: var(--text); vertical-align: middle; }
+.ap-table tbody tr:hover { background: var(--bg-elevated); }
+.ap-table tbody tr:last-child td { border-bottom: 0; }
+.ap-table .ap-th-sort { cursor: pointer; user-select: none; }
+.ap-table .ap-th-sort .bi { font-size: 0.7rem; margin-inline-start: 0.25rem; opacity: 0.5; }
+.ap-table .ap-th-sort.is-asc .bi, .ap-table .ap-th-sort.is-desc .bi { opacity: 1; color: var(--accent); }
+
+/* Checklist rows */
+.ap-task { display: flex; align-items: flex-start; gap: 0.85rem; padding: 0.9rem; border: 1px solid var(--border-color); border-radius: var(--radius); background: var(--surface); transition: border-color 0.18s ease, background 0.18s ease; }
+.ap-task:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--border-color)); }
+.ap-task.is-done { opacity: 0.72; }
+.ap-task.is-done .ap-task__title { text-decoration: line-through; }
+.ap-task__title { font-weight: 600; color: var(--text); margin: 0; }
+.ap-task__meta { font-size: 0.8rem; color: var(--text-muted); }
+.ap-task input[type="checkbox"] { width: 1.25rem; height: 1.25rem; margin-top: 0.15rem; accent-color: var(--accent); flex: 0 0 auto; }
+
+/* Let task/meeting/essay rows shrink inside narrow panels instead of
+   overflowing; grid and flex items default to a min-content floor. */
+.ap-task { min-width: 0; }
+.ap-task > div { min-width: 0; }
+
+/* "Your drafts" (essay) list: even spacing and a stable card layout. In the
+   narrow left column the icon + title/meta sit on the first row and the
+   status badge drops onto its own aligned row, so the text never collapses
+   to zero width and every card shares the same structure. */
+[data-essay-list] { gap: 0.75rem; }
+.ap-task[data-essay] {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.6rem;
+  row-gap: 0.55rem;
+  margin-bottom: 0 !important;
+}
+.ap-task[data-essay] .ap-icon-box { grid-area: 1 / 1; }
+.ap-task[data-essay] > .flex-grow-1 { grid-area: 1 / 2; }
+.ap-task[data-essay] .ap-badge { grid-area: 2 / 1 / 3 / 3; justify-self: start; }
+
+/* "Your counselor" card: keep the avatar a perfect circle and let the
+   name/title wrap instead of stretching the row (which squashed the avatar
+   into an ellipse in the narrow column). */
+.ap-counselor__body { min-width: 0; }
+
+/* Keep the task controls aligned inside narrow checklist panels. */
+@media (max-width: 575.98px) {
+  .ap-checklist__head { align-items: stretch; flex-direction: column; }
+  .ap-checklist__actions { align-items: stretch !important; flex-direction: column; }
+  .ap-checklist__actions .ap-select,
+  .ap-checklist__actions .btn-ap { width: 100%; min-width: 0; }
+  /* Action cluster drops onto its own full-width line so badges and buttons
+     stay inside the card at very narrow widths. */
+  [data-checklist-list] .ap-task,
+  [data-meetings] .ap-task { flex-wrap: wrap; }
+  .ap-task__actions { flex: 1 1 100%; width: 100%; justify-content: flex-end; }
+}
+
+/* Kanban-ish columns for admin */
+.ap-column { background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 1rem; min-height: 120px; }
+
+/* Timeline activity */
+.ap-activity { list-style: none; padding: 0; margin: 0; position: relative; }
+.ap-activity__item { position: relative; padding-inline-start: 1.9rem; padding-block: 0.55rem; }
+.ap-activity__item::before { content: ""; position: absolute; inset-inline-start: 0.55rem; top: 0; bottom: 0; width: 2px; background: var(--border-color); }
+.ap-activity__item:first-child::before { top: 1.1rem; }
+.ap-activity__item:last-child::before { bottom: calc(100% - 1.1rem); }
+.ap-activity__dot { position: absolute; inset-inline-start: 0; top: 0.7rem; width: 1.15rem; height: 1.15rem; border-radius: 50%; background: var(--accent); border: 3px solid var(--surface); box-shadow: 0 0 0 1px var(--border-color); }
+
+/* Auth split layout */
+.ap-auth { min-height: 100vh; display: grid; }
+@media (min-width: 992px) { .ap-auth { grid-template-columns: 1.05fr 1fr; } }
+.ap-auth__aside { display: none; position: relative; background: linear-gradient(150deg, var(--ap-jade), var(--ap-coral)); color: #fff; padding: 3rem; overflow: hidden; }
+@media (min-width: 992px) { .ap-auth__aside { display: flex; flex-direction: column; justify-content: space-between; } }
+.ap-auth__aside img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.22; }
+.ap-auth__aside > * { position: relative; z-index: 1; }
+.ap-auth__form { display: flex; align-items: center; justify-content: center; padding: 2rem 1.25rem; background: var(--bg); }
+.ap-auth__card { width: 100%; max-width: 460px; }
+.ap-auth__brand { display: inline-flex; align-items: center; width: fit-content; height: 74px; gap: 0; padding: 7px 12px; border-radius: var(--radius); background: linear-gradient(120deg, var(--ap-jade), var(--ap-coral)); font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; color: #fff; }
+.ap-auth__brand .ap-brand__mark { display: block; flex: 0 0 240px; width: 240px; max-width: none; height: 60px; }
+.ap-auth__brand > span { display: none; }
+.ap-auth__card > .ap-brand { flex: 0 0 auto; width: fit-content; height: auto; padding: 7px 12px; }
+.ap-auth__card > .ap-brand .ap-brand__mark { flex: 0 0 240px; width: 240px; max-width: none; height: 60px; }
+
+/* Mobile dashboard sidebar (off-canvas drawer below 768px) */
+@media (max-width: 767.98px) {
+  .ap-sidebar {
+    position: fixed; inset-block: 0; inset-inline-start: 0; z-index: 1060;
+    width: min(var(--sidebar-width), 84vw);
+    transform: translateX(-110%); transition: transform 0.28s ease;
+    box-shadow: var(--shadow-lg);
+}
+  [dir="rtl"] .ap-sidebar { transform: translateX(110%); }
+  .ap-sidebar.is-open { transform: translateX(0) !important; }
+  .ap-sidebar-overlay { position: fixed; inset: 0; background: var(--overlay); z-index: 1055; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.25s ease; }
+  .ap-sidebar-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
+}
+
+/* Bar chart (pure CSS) */
+.ap-bars { display: flex; align-items: flex-end; gap: 0.75rem; height: 180px; padding-top: 1rem; }
+.ap-bars__col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; height: 100%; justify-content: flex-end; }
+.ap-bars__bar { width: 100%; max-width: 46px; border-radius: var(--radius-sm) var(--radius-sm) 0 0; background: linear-gradient(180deg, var(--accent), var(--primary)); transition: height 0.6s ease; }
+.ap-bars__label { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Status dots */
+.ap-dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; display: inline-block; margin-inline-end: 0.4rem; }
+.ap-dot--success { background: var(--success); }
+.ap-dot--warning { background: var(--warning); }
+.ap-dot--error { background: var(--error); }
+.ap-dot--info { background: var(--info); }
+.ap-dot--muted { background: var(--text-muted); }
+
+/* ---- Responsive icon scaling (dashboard) ---- */
+@media (max-width: 767.98px) {
+  .ap-stat-card__icon { width: 2.6rem; height: 2.6rem; font-size: 1.2rem; }
+  .ap-bars__bar { max-width: 32px; }
+}
+
+/* ---- Compact top bar on small screens ---- */
+.ap-topbar .ap-cta-label { display: inline; }
+
+/* Dashboard menu toggle: only on phones (the drawer). Hidden once the sidebar
+   becomes persistent at >=768px. Local rule, independent of CDN utilities. */
+@media (min-width: 768px) {
+  .ap-topbar [data-sidebar-toggle] { display: none !important; }
+}
+/* Topbar search: hidden below md without relying on .d-none/.d-md-block. */
+@media (max-width: 767.98px) {
+  .ap-topbar__search { display: none !important; }
+}
+
+@media (max-width: 575.98px) {
+  .ap-topbar { gap: 0.4rem; padding-inline: 0.75rem; }
+  .ap-topbar__title { min-width: 0; flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 1rem; }
+  .ap-topbar .ap-cta-label { display: none; }
+  .ap-topbar .ap-icon-btn { width: 36px; height: 36px; font-size: 0.95rem; }
+  .ap-topbar .ap-avatar--sm { width: 30px; height: 30px; }
+  .ap-topbar > .ms-auto { gap: 0.3rem; }
+  /* Settings is duplicated in the sidebar; drop it on phones to fit the
+     theme + RTL toggles, notifications and avatar without overflow. */
+  .ap-topbar a.ap-icon-btn[href="settings.html"] { display: none; }
+}
+
+/* ---- Phone type scale (<=575.98px) ---------------------------------------
+   Slightly smaller type on phones so the dashboard, checklist, essay and
+   meetings pages stay balanced and uncluttered. Body/meta text never drops
+   below 13px for readability; 768px and up are intentionally unchanged. */
+@media (max-width: 575.98px) {
+  .ap-main { font-size: 0.9375rem; }               /* 15px base for em-based text */
+  .ap-topbar__title { font-size: 0.95rem; }        /* 15.2px */
+  .ap-widget__title { font-size: 0.97rem; }        /* 15.5px */
+  .ap-widget .h3, .ap-content .h3 { font-size: 1.2rem; }
+  .ap-stat-card__value { font-size: 1.7rem; }
+  .ap-stat-card__label { font-size: 0.82rem; }     /* 13.1px */
+  .ap-ring__value { font-size: 1.35rem; }
+  .ap-task__title { font-size: 0.95rem; }          /* 15.2px */
+  .ap-task__meta { font-size: 0.82rem; }           /* 13.1px */
+  .ap-badge { font-size: 0.72rem; }
+  .ap-eyebrow { font-size: 0.72rem; }
+  .ap-link-inline { font-size: 0.82rem; }          /* 13.1px */
+  .btn-ap { font-size: 0.9rem; }
+  .btn-ap--sm { font-size: 0.82rem; }              /* 13.1px */
+  .ap-sidebar__link { font-size: 0.86rem; }
+  .ap-sidebar__section { font-size: 0.72rem; }
+  .ap-label { font-size: 0.84rem; }
+  .ap-input, .ap-select, .ap-textarea { font-size: 0.88rem; }
+}

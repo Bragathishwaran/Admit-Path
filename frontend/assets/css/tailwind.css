@@ -1,0 +1,21 @@
+/*
+ * AdmitPath — tailwind.css
+ * ---------------------------------------------------------------------
+ * DEVELOPMENT: Tailwind runs from the Play CDN
+ *   https://cdn.tailwindcss.com/3.4.13
+ * with `preflight: false` so it only emits the utility classes we use and
+ * never overrides Bootstrap's reset.
+ *
+ * PRODUCTION (recommended): build a compiled Tailwind stylesheet.
+ *   1. npm install -D tailwindcss
+ *   2. npx tailwindcss -i ./assets/css/tailwind.src.css \
+ *        -o ./assets/css/tailwind.css --minify
+ *   3. Swap the Play CDN <script> in the pages for:
+ *        <link rel="stylesheet" href="../assets/css/tailwind.css">
+ *
+ * tailwind.config.js in the frontend root holds the content globs and the
+ * brand theme extensions so utility colors match the design system.
+ *
+ * NOTE: Tailwind is used only for layout/spacing utilities. All component
+ * styling lives in style.css / dashboard.css and uses CSS variables.
+ */

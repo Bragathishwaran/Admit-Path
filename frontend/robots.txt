@@ -1,0 +1,16 @@
+# AdmitPath — robots.txt
+
+User-agent: *
+Allow: /
+
+# Auth + authenticated areas are excluded from indexing
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /forgot-password.html
+Disallow: /student-dashboard.html
+Disallow: /application-checklist.html
+Disallow: /essay-feedback.html
+Disallow: /meetings.html
+
+
+Sitemap: https://www.admitpath.example/sitemap.xml

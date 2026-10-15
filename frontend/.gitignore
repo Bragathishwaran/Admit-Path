@@ -1,0 +1,22 @@
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+
+# ---- Node (optional Tailwind build tooling) ----
+node_modules/
+dist/
+.cache/
+package-lock.json
+
+# ---- Env / secrets ----
+.env
+.env.*
+!.env.example
