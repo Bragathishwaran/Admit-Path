@@ -7,7 +7,12 @@
   <url><loc>https://www.admitpath.example/pricing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.admitpath.example/counselors.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.admitpath.example/blog.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.admitpath.example/blog-details.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.admitpath.example/blog-choosing-the-right-college-fit.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.admitpath.example/blog-essay-writing-that-sounds-like-you.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.admitpath.example/blog-application-deadline-planner.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.admitpath.example/blog-scholarships-worth-your-time.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.admitpath.example/blog-acing-your-admissions-interview.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.admitpath.example/blog-understanding-financial-aid.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.admitpath.example/contact.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.admitpath.example/coming-soon.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://www.admitpath.example/maintenance.html</loc><changefreq>yearly</changefreq><priority>0.1</priority></url>

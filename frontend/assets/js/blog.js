@@ -1,7 +1,7 @@
 /* =====================================================================
    AdmitPath — blog.js
    Blog listing (search, category filter, load-more) and blog details
-   (dynamic article loading via ?slug=, TOC, related posts).
+   (per-article static pages via body[data-slug], TOC, related posts).
    ===================================================================== */
 (function () {
   "use strict";
@@ -14,10 +14,13 @@
     "mastering-common-app-activities",
   ]);
 
+  // Each article has its own static page: blog-<slug>.html
+  const postUrl = (slug) => "blog-" + slug + ".html";
+
   function card(post) {
     return '' +
       '<article class="ap-card ap-card--hover h-100 d-flex flex-column">' +
-      '<a href="blog-details.html?slug=' + encodeURIComponent(post.slug) + '" class="d-block ap-media ap-ratio-16x9">' +
+      '<a href="' + postUrl(post.slug) + '" class="d-block ap-media ap-ratio-16x9">' +
       '<img src="' + esc(post.image) + '" alt="' + esc(post.title) + '" loading="lazy">' +
       '</a>' +
       '<div class="ap-card__body d-flex flex-column flex-grow-1">' +
@@ -25,13 +28,13 @@
       '<span class="ap-badge ap-badge--accent">' + esc(post.category) + '</span>' +
       '<span><i class="bi bi-clock"></i> ' + post.readTime + ' min read</span>' +
       '</div>' +
-      '<h3 class="h6"><a href="blog-details.html?slug=' + encodeURIComponent(post.slug) + '" class="ap-text-primary">' + esc(post.title) + '</a></h3>' +
+      '<h3 class="h6"><a href="' + postUrl(post.slug) + '" class="ap-text-primary">' + esc(post.title) + '</a></h3>' +
       '<p class="ap-clamp-2 small">' + esc(post.excerpt) + '</p>' +
       '<div class="mt-auto d-flex align-items-center justify-content-between pt-2 mb-2">' +
       '<span class="small ap-text-muted"><i class="bi bi-person"></i> ' + esc(post.author) + '</span>' +
       '<span class="small ap-text-muted">' + new Date(post.date).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }) + '</span>' +
       '</div>' +
-      '<a href="blog-details.html?slug=' + encodeURIComponent(post.slug) + '" class="btn-ap btn-ap--outline btn-ap--sm align-self-start">Learn more <i class="bi bi-arrow-right ap-flip-rtl"></i></a>' +
+      '<a href="' + postUrl(post.slug) + '" class="btn-ap btn-ap--outline btn-ap--sm align-self-start">Learn more <i class="bi bi-arrow-right ap-flip-rtl"></i></a>' +
       '</div></article>';
   }
 
@@ -94,7 +97,7 @@
   async function initDetails() {
     const root = document.querySelector("[data-blog-article]");
     if (!root) return;
-    const slug = new URLSearchParams(location.search).get("slug") || "choosing-the-right-college-fit";
+    const slug = document.body.getAttribute("data-slug") || new URLSearchParams(location.search).get("slug") || "choosing-the-right-college-fit";
     const titleEl = root.querySelector("[data-article-title]");
     const metaEl = root.querySelector("[data-article-meta]");
     const imgEl = root.querySelector("[data-article-image]");
@@ -108,7 +111,7 @@
       document.title = post.title + " | AdmitPath Blog";
       titleEl.textContent = post.title;
       root.querySelector("[data-article-category]").textContent = post.category;
-      metaEl.innerHTML = '<i class="bi bi-person"></i> ' + esc(post.author) + ' &nbsp;·&nbsp; <i class="bi bi-calendar3"></i> ' + new Date(post.date).toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" }) + ' &nbsp;·&nbsp; <i class="bi bi-clock"></i> ' + post.readTime + ' min read';
+      metaEl.innerHTML = '<i class="bi bi-person"></i> ' + esc(post.author) + ' &nbsp;·&nbsp; <i class="bi bi-calendar3"></i> ' + new Date(post.date).toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" });
       imgEl.src = post.image; imgEl.alt = post.title;
       bodyEl.innerHTML = post.content;
       if (authorEl) authorEl.querySelector("[data-author-name]").textContent = post.author;

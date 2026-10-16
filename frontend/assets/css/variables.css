@@ -47,6 +47,25 @@
   --shadow-color: 168 30% 14%;
   --overlay: rgba(17, 39, 35, 0.55);
 
+  /* ---- Logo / brand ---- */
+  /* One versatile, theme-aware system for the logo used in header, footer,
+     mobile drawer, sidebar and auth screens (all sit on the brand gradient). */
+  --brand-grad-from: var(--ap-jade);
+  --brand-grad-to: var(--ap-coral);
+  --brand-bg: linear-gradient(120deg, var(--brand-grad-from), var(--brand-grad-to));
+  --brand-ink: #ffffff;                      /* wordmark "Admit" */
+  --brand-accent: #ffd79a;                   /* wordmark "Path" */
+  --brand-sub: rgba(255, 255, 255, 0.85);    /* tagline */
+  --brand-mark-bg: #ffffff;                  /* mark circle */
+  --brand-mark-cap: var(--ap-jade);          /* cap / needle */
+  --brand-mark-line: var(--ap-coral);        /* tassel / arc */
+  --brand-mark-dot: var(--ap-gold);          /* accent dot */
+  --brand-word-size: 23px;                   /* wordmark size (SVG user units) */
+  --brand-word-weight: 800;
+  --brand-word-spacing: -0.2px;
+  --brand-sub-size: 10px;                  /* tagline size (SVG user units) */
+  --brand-sub-spacing: 1.4px;
+
   /* ---- Typography ---- */
   --font-heading: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
