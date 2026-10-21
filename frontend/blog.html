@@ -34,15 +34,15 @@
 <header class="ap-header">
   <div class="ap-container ap-header__inner">
     <a href="index.html" class="ap-brand" aria-label="AdmitPath home">
-      <img class="ap-brand__mark ap-brand__img" src="assets/images/AdmitPath%20Admissions%20Counseling%20Badge.png" alt="AdmitPath Admissions Counseling">
+      <img class="ap-brand__mark ap-brand__img" src="assets/images/AdmitPath%20Admissions%20Counseling%20Badge.webp" alt="AdmitPath Admissions Counseling">
     </a>
 
     <nav class="ap-nav" aria-label="Primary navigation">
       <div class="ap-dropdown">
-        <a class="ap-nav__link" href="index.html" data-dropdown aria-haspopup="true" aria-expanded="false">Home <i class="bi bi-chevron-down"></i></a>
+        <a class="ap-nav__link" href="index.html" data-dropdown aria-haspopup="true" aria-expanded="false">Home 1 <i class="bi bi-chevron-down"></i></a>
         <div class="ap-dropdown__menu" role="menu">
           <a class="ap-dropdown__item" href="index.html" role="menuitem"><i class="bi bi-house"></i> Home 1</a>
-          <a class="ap-dropdown__item" href="home-2.html" role="menuitem"><i class="bi bi-star"></i> Success Stories</a>
+          <a class="ap-dropdown__item" href="home-2.html" role="menuitem"><i class="bi bi-star"></i> Home 2</a>
         </div>
       </div>
       <a class="ap-nav__link" href="about.html" data-nav>About</a>
@@ -87,11 +87,16 @@
   <div class="ap-mobile__overlay" data-mobile-close></div>
   <div class="ap-mobile__panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <div class="d-flex align-items-center justify-content-between mb-3">
-      <a href="index.html" class="ap-brand"><img class="ap-brand__mark ap-brand__img" src="assets/images/AdmitPath%20Admissions%20Counseling%20Badge.png" alt="AdmitPath Admissions Counseling"></a>
+      <a href="index.html" class="ap-brand"><img class="ap-brand__mark ap-brand__img" src="assets/images/AdmitPath%20Admissions%20Counseling%20Badge.webp" alt="AdmitPath Admissions Counseling"></a>
       <button type="button" class="ap-icon-btn" data-mobile-close aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
     </div>
-    <a class="ap-mobile__link" href="index.html" data-nav>Home 1 <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
-    <a class="ap-mobile__link" href="home-2.html" data-nav>Success Stories <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
+    <div class="ap-mobile__group">
+      <button type="button" class="ap-mobile__link ap-mobile__toggle" data-mobile-home-toggle aria-expanded="false" aria-controls="mobileHomeMenu">Home <i class="bi bi-chevron-down"></i></button>
+      <div class="ap-mobile__submenu" id="mobileHomeMenu" hidden>
+        <a class="ap-mobile__link" href="index.html" data-nav><i class="bi bi-house"></i> Home 1</a>
+        <a class="ap-mobile__link" href="home-2.html" data-nav><i class="bi bi-star"></i> Home 2</a>
+      </div>
+    </div>
     <a class="ap-mobile__link" href="about.html" data-nav>About Us <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
     <a class="ap-mobile__link" href="services.html" data-nav>Services <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
     <a class="ap-mobile__link" href="blog.html" data-nav>Blog <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
@@ -116,7 +121,7 @@
     <!-- PAGE HEAD - BLOG HERO -->
     <section class="ap-pagehead ap-hero--blog">
       <div class="ap-container text-center d-flex flex-column align-items-center">
-        <span class="ap-eyebrow"><i class="bi bi-journal-text"></i> Admissions knowledge hub</span>
+        <span class="ap-eyebrow ap-eyebrow--sm"><i class="bi bi-journal-text"></i> Admissions knowledge hub</span>
         <h1 class="mt-2">Admissions Blog</h1>
         <p class="mb-0 mx-auto" style="max-width:64ch">Straightforward, practical guidance on every part of the application journey. Browse by topic, search for what you need, and read articles written to help you decide with confidence.</p>
         <div class="ap-hero--blog-search">
@@ -230,20 +235,20 @@
     <section class="ap-section ap-section--tight" aria-labelledby="nl-title">
       <div class="ap-container">
         <div class="ap-newsletter ap-reveal">
-          <div class="row align-items-center g-4">
-            <div class="col-12 col-lg-6">
-              <span class="ap-eyebrow" style="background:rgba(255,255,255,.18);color:#fff"><i class="bi bi-envelope-paper"></i> Newsletter</span>
+          <div class="ap-newsletter__layout">
+            <div class="ap-newsletter__content">
+              <span class="ap-eyebrow ap-eyebrow--sm" style="background:rgba(255,255,255,.18);color:#fff"><i class="bi bi-envelope-paper"></i> Newsletter</span>
               <h3 id="nl-title" class="mt-3 mb-2">Admissions insights, straight to your inbox</h3>
-              <p class="mb-0">Join thousands of students getting weekly guidance on essays, deadlines, scholarships and interviews. No spam  unsubscribe anytime.</p>
+              <p class="mb-0">Join thousands of students getting weekly guidance on essays, deadlines, scholarships and interviews. No spam &mdash; unsubscribe anytime.</p>
             </div>
-            <div class="col-12 col-lg-6">
-              <form data-newsletter-form novalidate>
+            <div class="ap-newsletter__form-column">
+              <form class="ap-newsletter__form" data-newsletter-form novalidate>
                 <div class="ap-field mb-2">
                   <label class="visually-hidden" for="blogNewsletterEmail">Email address</label>
                   <input class="ap-input" type="email" id="blogNewsletterEmail" name="email" data-validate="email" required placeholder="you@example.com" autocomplete="email">
                   <div class="ap-error-msg"></div>
                 </div>
-                <button class="btn-ap btn-ap--gold btn-ap--block" type="submit"><i class="bi bi-envelope-paper"></i> Subscribe</button>
+                <button class="btn-ap btn-ap--gold" type="submit"><i class="bi bi-envelope-paper"></i> Subscribe for free</button>
               </form>
             </div>
           </div>
@@ -252,7 +257,7 @@
     </section>
 
     <!-- 4. RELATED RESOURCES CTA -->
-    <section class="ap-section" aria-labelledby="resources-title">
+    <section class="ap-section ap-resource-cards" aria-labelledby="resources-title">
       <div class="ap-container">
         <div class="text-center mb-5 ap-reveal">
           <span class="ap-eyebrow"><i class="bi bi-signpost-2"></i> Keep exploring</span>

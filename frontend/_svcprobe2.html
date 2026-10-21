@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>probe2</title>
+<style>html,body{margin:0;padding:0}iframe{border:0}</style>
+</head>
+<body>
+<pre id="out">PENDING</pre>
+<iframe id="f" src="about:blank"></iframe>
+<script>
+(function () {
+  var parts = (location.hash || '').replace('#', '').split('|');
+  var w = parseInt(parts[0], 10) || 1280;
+  var page = parts[1] || 'index.html';
+  var f = document.getElementById('f');
+  var out = document.getElementById('out');
+  f.style.width = w + 'px';
+  f.style.height = '1600px';
+  f.src = page;
+  var done = false;
+  function report(o) {
+    if (done) return;
+    done = true;
+    o.done = true;
+    out.textContent = 'JSONSTART' + JSON.stringify(o) + 'JSONEND';
+  }
+  f.onload = function () {
+    setTimeout(function () {
+      try {
+        var d = f.contentDocument;
+        var res = { page: page, w: w, scrollW: d.documentElement.scrollWidth, sections: [], rows: [], overflow: [], imgs: [], h1: '', h1fs: '', h2s: [] };
+        var h1 = d.querySelector('h1');
+        res.h1 = h1 ? h1.textContent.trim() : '';
+        res.h1fs = h1 ? getComputedStyle(h1).fontSize : '';
+        var h2s = d.querySelectorAll('h2');
+        for (var i = 0; i < h2s.length; i++) {
+          res.h2s.push(h2s[i].textContent.trim().slice(0, 40) + ' [' + Math.round(h2s[i].getBoundingClientRect().height) + 'px]');
+        }
+        var secs = d.querySelectorAll('section');
+        for (var s = 0; s < secs.length; s++) {
+          var r = secs[s].getBoundingClientRect();
+          res.sections.push({ cls: secs[s].className.slice(0, 40), y: Math.round(r.y), h: Math.round(r.height) });
+        }
+        // card rows
+        var cards = d.querySelectorAll('.ap-card');
+        for (var c = 0; c < cards.length; c++) {
+          var cr = cards[c].getBoundingClientRect();
+          var h3 = cards[c].querySelector('h3');
+          var a = cards[c].querySelector('a.btn-ap, a.ap-link-inline');
+          res.rows.push({
+            y: Math.round(cr.y), x: Math.round(cr.x), w: Math.round(cr.width), h: Math.round(cr.height),
+            h3: h3 ? Math.round(h3.getBoundingClientRect().y) : -1,
+            a: a ? Math.round(a.getBoundingClientRect().y) : -1
+          });
+        }
+        // overflow beyond the viewport
+        var all = d.querySelectorAll('body *');
+        for (var e = 0; e < all.length; e++) {
+          var el = all[e];
+          var er = el.getBoundingClientRect();
+          if (er.width === 0 || er.height === 0) continue;
+          if (er.right > w + 2 || er.left < -2) {
+            res.overflow.push((el.tagName + '.' + String(el.className).slice(0, 30)) + ' [' + Math.round(er.left) + '..' + Math.round(er.right) + ']');
+          }
+        }
+        var imgs = d.querySelectorAll('img');
+        for (var m = 0; m < imgs.length; m++) {
+          var im = imgs[m];
+          var ir = im.getBoundingClientRect();
+          res.imgs.push({
+            src: (im.getAttribute('src') || '').replace(/^.*\//, '').slice(0, 46),
+            nat: im.naturalWidth + 'x' + im.naturalHeight,
+            box: Math.round(ir.width) + 'x' + Math.round(ir.height),
+            fit: getComputedStyle(im).objectFit
+          });
+        }
+        report(res);
+      } catch (e) { report({ error: String(e) }); }
+    }, 2200);
+  };
+  setTimeout(function () { report({ error: 'timeout' }); }, 12000);
+})();
+</script>
+</body>
+</html>

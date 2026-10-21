@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <circle cx="24" cy="24" r="22" fill="#0F172A" />
-  <polygon points="24,10 34,18 24,26 14,18" fill="#F59E0B" />
-  <path d="M17,22 v5 c0,3 7,3 7,3 s7,0 7,-3 v-5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
-  <circle cx="31" cy="23" r="1.6" fill="#F59E0B" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="AdmitPath">
+  <!-- AdmitPath mark: graduation cap on the brand's deep-green tile (badge palette) -->
+  <rect width="48" height="48" rx="11" fill="#043D24"/>
+  <path d="M22.5 11.5 L38.5 20.2 L22.5 28.9 L6.5 20.2 Z" fill="#FFFFFF"/>
+  <path d="M12.5 24.4 V31.4 C12.5 35.4 22.5 35.4 22.5 35.4 C22.5 35.4 32.5 35.4 32.5 31.4 V24.4" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M38.5 20.2 V29" fill="none" stroke="#E4572E" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="38.5" cy="31.8" r="3" fill="#E4572E"/>
 </svg>

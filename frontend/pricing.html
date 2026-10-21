@@ -34,15 +34,15 @@
 <header class="ap-header">
   <div class="ap-container ap-header__inner">
     <a href="index.html" class="ap-brand" aria-label="AdmitPath home">
-      <img class="ap-brand__mark ap-brand__img" src="assets/images/AdmitPath%20Admissions%20Counseling%20Badge.png" alt="AdmitPath Admissions Counseling">
+      <img class="ap-brand__mark ap-brand__img" src="assets/images/AdmitPath%20Admissions%20Counseling%20Badge.webp" alt="AdmitPath Admissions Counseling">
     </a>
 
     <nav class="ap-nav" aria-label="Primary navigation">
       <div class="ap-dropdown">
-        <a class="ap-nav__link" href="index.html" data-dropdown aria-haspopup="true" aria-expanded="false">Home <i class="bi bi-chevron-down"></i></a>
+        <a class="ap-nav__link" href="index.html" data-dropdown aria-haspopup="true" aria-expanded="false">Home 1 <i class="bi bi-chevron-down"></i></a>
         <div class="ap-dropdown__menu" role="menu">
           <a class="ap-dropdown__item" href="index.html" role="menuitem"><i class="bi bi-house"></i> Home 1</a>
-          <a class="ap-dropdown__item" href="home-2.html" role="menuitem"><i class="bi bi-star"></i> Success Stories</a>
+          <a class="ap-dropdown__item" href="home-2.html" role="menuitem"><i class="bi bi-star"></i> Home 2</a>
         </div>
       </div>
       <a class="ap-nav__link" href="about.html" data-nav>About</a>
@@ -87,11 +87,16 @@
   <div class="ap-mobile__overlay" data-mobile-close></div>
   <div class="ap-mobile__panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <div class="d-flex align-items-center justify-content-between mb-3">
-      <a href="index.html" class="ap-brand"><img class="ap-brand__mark ap-brand__img" src="assets/images/AdmitPath%20Admissions%20Counseling%20Badge.png" alt="AdmitPath Admissions Counseling"></a>
+      <a href="index.html" class="ap-brand"><img class="ap-brand__mark ap-brand__img" src="assets/images/AdmitPath%20Admissions%20Counseling%20Badge.webp" alt="AdmitPath Admissions Counseling"></a>
       <button type="button" class="ap-icon-btn" data-mobile-close aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
     </div>
-    <a class="ap-mobile__link" href="index.html" data-nav>Home 1 <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
-    <a class="ap-mobile__link" href="home-2.html" data-nav>Success Stories <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
+    <div class="ap-mobile__group">
+      <button type="button" class="ap-mobile__link ap-mobile__toggle" data-mobile-home-toggle aria-expanded="false" aria-controls="mobileHomeMenu">Home <i class="bi bi-chevron-down"></i></button>
+      <div class="ap-mobile__submenu" id="mobileHomeMenu" hidden>
+        <a class="ap-mobile__link" href="index.html" data-nav><i class="bi bi-house"></i> Home 1</a>
+        <a class="ap-mobile__link" href="home-2.html" data-nav><i class="bi bi-star"></i> Home 2</a>
+      </div>
+    </div>
     <a class="ap-mobile__link" href="about.html" data-nav>About Us <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
     <a class="ap-mobile__link" href="services.html" data-nav>Services <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
     <a class="ap-mobile__link" href="blog.html" data-nav>Blog <i class="bi bi-chevron-right ap-flip-rtl"></i></a>
@@ -146,7 +151,7 @@
         <!-- 3. PACKAGE CARDS (6  arranged 3  3) -->
         <div class="row g-4">
           <div class="col-12 col-md-6 col-lg-4 ap-reveal">
-            <article class="ap-card ap-card__body h-100 d-flex flex-column">
+            <article class="ap-card ap-card__body ap-price-card h-100 d-flex flex-column">
               <div class="d-flex align-items-center ap-price-card__head mb-1"><span class="ap-badge ap-badge--neutral">Starter</span></div>
               <h3 class="h5 mb-1">Explorer</h3>
               <p class="small ap-text-muted ap-price-card__desc mb-2">For students exploring options early and getting organised.</p>
@@ -163,7 +168,7 @@
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 ap-reveal">
-            <article class="ap-card ap-card__body h-100 d-flex flex-column">
+            <article class="ap-card ap-card__body ap-price-card h-100 d-flex flex-column">
               <div class="d-flex align-items-center ap-price-card__head mb-1"><span class="ap-badge ap-badge--accent">Core</span></div>
               <h3 class="h5 mb-1">Essentials</h3>
               <p class="small ap-text-muted ap-price-card__desc mb-2">For students who need direction and a clear plan.</p>
@@ -180,7 +185,7 @@
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 ap-reveal">
-            <article class="ap-card ap-card__body h-100 d-flex flex-column" style="border:2px solid var(--gold)">
+            <article class="ap-card ap-card__body ap-price-card h-100 d-flex flex-column" style="border-color: var(--gold)">
               <div class="d-flex align-items-center ap-price-card__head mb-1"><span class="ap-badge ap-badge--gold">Most Popular</span></div>
               <h3 class="h5 mb-1">Scholar</h3>
               <p class="small ap-text-muted ap-price-card__desc mb-2">For students who want strong essays and a balanced list.</p>
@@ -197,7 +202,7 @@
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 ap-reveal">
-            <article class="ap-card ap-card__body h-100 d-flex flex-column">
+            <article class="ap-card ap-card__body ap-price-card h-100 d-flex flex-column">
               <div class="d-flex align-items-center ap-price-card__head mb-1"><span class="ap-badge ap-badge--accent">Best Value</span></div>
               <h3 class="h5 mb-1">Achiever</h3>
               <p class="small ap-text-muted ap-price-card__desc mb-2">For competitive applicants targeting selective schools.</p>
@@ -214,7 +219,7 @@
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 ap-reveal">
-            <article class="ap-card ap-card__body h-100 d-flex flex-column">
+            <article class="ap-card ap-card__body ap-price-card h-100 d-flex flex-column">
               <div class="d-flex align-items-center ap-price-card__head mb-1"><span class="ap-badge ap-badge--accent">Premium</span></div>
               <h3 class="h5 mb-1">Elite</h3>
               <p class="small ap-text-muted ap-price-card__desc mb-2">For families who want priority, end-to-end support.</p>
@@ -231,7 +236,7 @@
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 ap-reveal">
-            <article class="ap-card ap-card__body h-100 d-flex flex-column">
+            <article class="ap-card ap-card__body ap-price-card h-100 d-flex flex-column">
               <div class="d-flex align-items-center ap-price-card__head mb-1"><span class="ap-badge ap-badge--gold">Concierge</span></div>
               <h3 class="h5 mb-1">Premier</h3>
               <p class="small ap-text-muted ap-price-card__desc mb-2">A bespoke, high-touch program for a full application year.</p>

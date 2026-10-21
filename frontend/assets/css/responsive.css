@@ -12,14 +12,12 @@
   .ap-burger { display: inline-flex; }
   .ap-header__actions { flex: 1 1 auto; justify-content: flex-end; }
   .ap-header__actions .ap-btn-desktop { display: none; }
-  .ap-brand { flex-basis: 180px; width: 180px; height: 56px; padding: 4px 9px; }
-  .ap-brand__mark { max-width: 180px; }
+  .ap-brand { flex: 0 0 auto; width: auto; height: 56px; padding: 4px 0; }
   .ap-history-image { height: auto; aspect-ratio: 16 / 9; }
   .ap-blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 575.98px) {
-  .ap-brand { flex-basis: 150px; width: 150px; height: 48px; padding: 3px 7px; }
-  .ap-brand__mark { max-width: 150px; }
+  .ap-brand { flex: 0 0 auto; width: auto; height: 48px; padding: 3px 0; }
   .ap-blog-grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
 }
 
@@ -32,7 +30,6 @@
   .ap-float-card--br { inset-inline-end: 0.5rem; }
   .btn-ap { width: 100%; }
   .btn-ap.ap-w-auto-sm { width: auto; }
-  .ap-pagehead { padding-block: 2rem; }
   /* Dashboard card/section spacing fixes for 320px+ */
   .ap-content { padding: 0.875rem; }
   .ap-widget { padding: 1rem; border-radius: 0.875rem; }
@@ -58,8 +55,7 @@
   body { overflow-x: clip; max-width: 100%; width: 100%; }
   h1 { font-size: 1.9rem; }
   .ap-header__inner { gap: 0.65rem; }
-  .ap-brand { flex-basis: 132px; width: 132px; }
-  .ap-brand__mark { max-width: 132px; }
+  .ap-brand { flex: 0 0 auto; width: auto; height: 44px; padding: 3px 0; }
   .ap-header__actions { gap: 0.35rem; }
 }
 

@@ -29,6 +29,13 @@
       // Mark parent dropdown trigger too
       const dd = link.closest(".ap-dropdown");
       if (dd) { const t = dd.querySelector(".ap-nav__link"); if (t) { t.classList.add("is-active"); t.setAttribute("aria-current", "page"); } }
+      const mobileHome = link.closest(".ap-mobile__group");
+      if (mobileHome) {
+        const toggle = mobileHome.querySelector("[data-mobile-home-toggle]");
+        const submenu = mobileHome.querySelector(".ap-mobile__submenu");
+        if (toggle) { toggle.classList.add("is-active"); toggle.setAttribute("aria-expanded", "true"); }
+        if (submenu) submenu.hidden = false;
+      }
     });
   }
 
@@ -88,6 +95,14 @@
     if (!drawer) return;
     const openers = document.querySelectorAll("[data-mobile-open]");
     const closers = drawer.querySelectorAll("[data-mobile-close]");
+    drawer.querySelectorAll("[data-mobile-home-toggle]").forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const submenu = document.getElementById(toggle.getAttribute("aria-controls"));
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        if (submenu) submenu.hidden = expanded;
+      });
+    });
     const open = () => {
       drawer.classList.add("is-open");
       document.body.style.overflow = "hidden";

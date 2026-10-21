@@ -25,7 +25,7 @@
   .ap-sidebar { transition: margin-inline-start 0.28s ease; }
   .ap-sidebar.is-collapsed { margin-inline-start: calc(var(--sidebar-width) * -1); }
 }
-.ap-sidebar__brand { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem; border: 0; border-radius: var(--radius); margin-bottom: 0.5rem; background: transparent; }
+.ap-sidebar__brand { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem; border: 0; border-radius: var(--radius); margin-bottom: 0.5rem; background: transparent; flex-shrink: 0; }
 .ap-sidebar__brand .ap-brand__mark { width: 100%; max-width: none; height: auto; flex: 0 0 100%; }
 .ap-sidebar__brand .ap-brand__name { display: none; }
 .ap-sidebar__section { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 1rem 0.75rem 0.35rem; }
@@ -209,11 +209,11 @@
 .ap-auth__aside > * { position: relative; z-index: 1; }
 .ap-auth__form { display: flex; align-items: center; justify-content: center; padding: 2rem 1.25rem; background: var(--bg); }
 .ap-auth__card { width: 100%; max-width: 460px; }
-.ap-auth__brand { display: inline-flex; align-items: center; width: fit-content; height: 88px; gap: 0; padding: 7px 12px; border-radius: var(--radius); background: transparent; font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; color: var(--brand-ink); }
-.ap-auth__brand .ap-brand__mark { display: block; flex: 0 0 240px; width: 240px; max-width: none; height: 72px; }
+.ap-auth__brand { display: inline-flex; align-items: center; width: 240px; height: 88px; gap: 0; padding: 7px 12px; border-radius: var(--radius); background: transparent; font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; color: var(--brand-ink); }
+.ap-auth__brand .ap-brand__mark { display: block; flex: 0 0 216px; width: 216px; max-width: none; height: 72px; }
 .ap-auth__brand > span { display: none; }
 .ap-auth__card > .ap-brand { flex: 0 0 auto; width: fit-content; height: auto; padding: 7px 12px; }
-.ap-auth__card > .ap-brand .ap-brand__mark { flex: 0 0 240px; width: 240px; max-width: none; height: 72px; }
+.ap-auth__card > .ap-brand .ap-brand__mark { flex: 0 0 216px; width: 216px; max-width: none; height: 72px; }
 
 /* Mobile dashboard sidebar (off-canvas drawer below 768px) */
 @media (max-width: 767.98px) {
@@ -288,8 +288,8 @@
   .ap-ring__value { font-size: 1.35rem; }
   .ap-task__title { font-size: 0.95rem; }          /* 15.2px */
   .ap-task__meta { font-size: 0.82rem; }           /* 13.1px */
-  .ap-badge { font-size: 0.72rem; }
-  .ap-eyebrow { font-size: 0.72rem; }
+  .ap-badge { font-size: 0.76rem; }
+  .ap-eyebrow { font-size: 0.8rem; }
   .ap-link-inline { font-size: 0.82rem; }          /* 13.1px */
   .btn-ap { font-size: 0.9rem; }
   .btn-ap--sm { font-size: 0.82rem; }              /* 13.1px */

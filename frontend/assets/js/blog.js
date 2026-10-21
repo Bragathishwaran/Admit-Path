@@ -19,7 +19,7 @@
 
   function card(post) {
     return '' +
-      '<article class="ap-card ap-card--hover h-100 d-flex flex-column">' +
+      '<article class="ap-card ap-card--hover ap-post-card h-100 d-flex flex-column">' +
       '<a href="' + postUrl(post.slug) + '" class="d-block ap-media ap-ratio-16x9">' +
       '<img src="' + esc(post.image) + '" alt="' + esc(post.title) + '" loading="lazy">' +
       '</a>' +
@@ -29,8 +29,8 @@
       '<span><i class="bi bi-clock"></i> ' + post.readTime + ' min read</span>' +
       '</div>' +
       '<h3 class="h6"><a href="' + postUrl(post.slug) + '" class="ap-text-primary">' + esc(post.title) + '</a></h3>' +
-      '<p class="ap-clamp-2 small">' + esc(post.excerpt) + '</p>' +
-      '<div class="mt-auto d-flex align-items-center justify-content-between pt-2 mb-2">' +
+      '<p class="ap-clamp-2 small flex-grow-1">' + esc(post.excerpt) + '</p>' +
+      '<div class="d-flex align-items-center justify-content-between pt-2 mb-2">' +
       '<span class="small ap-text-muted"><i class="bi bi-person"></i> ' + esc(post.author) + '</span>' +
       '<span class="small ap-text-muted">' + new Date(post.date).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }) + '</span>' +
       '</div>' +
@@ -124,7 +124,9 @@
       if (!heads.length) tocEl.innerHTML = "";
 
       const related = await AP.api.relatedPosts(slug, 3);
-      relatedEl.innerHTML = related.map(card).join("");
+      relatedEl.innerHTML = related.map(function (post) {
+        return '<div class="col-12 col-sm-6 col-lg-4">' + card(post) + '</div>';
+      }).join("");
 
       // Share links
       const url = encodeURIComponent(location.href), tt = encodeURIComponent(post.title);

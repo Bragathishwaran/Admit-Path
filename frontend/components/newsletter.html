@@ -2,20 +2,20 @@
 <section class="ap-section ap-section--tight" aria-labelledby="nl-title">
   <div class="ap-container">
     <div class="ap-newsletter ap-reveal">
-      <div class="row align-items-center g-4">
-        <div class="col-12 col-lg-6">
-          <span class="ap-eyebrow" style="background:rgba(255,255,255,.18);color:#fff"><i class="bi bi-send"></i> Newsletter</span>
+      <div class="ap-newsletter__layout">
+        <div class="ap-newsletter__content">
+          <span class="ap-eyebrow ap-eyebrow--sm" style="background:rgba(255,255,255,.18);color:#fff"><i class="bi bi-send"></i> Newsletter</span>
           <h3 id="nl-title" class="mt-3 mb-2">Admissions insights, straight to your inbox</h3>
           <p class="mb-0">Join thousands of students getting weekly guidance on essays, deadlines, scholarships and interviews. No spam — unsubscribe anytime.</p>
         </div>
-        <div class="col-12 col-lg-6">
-          <form data-newsletter-form novalidate>
+        <div class="ap-newsletter__form-column">
+          <form class="ap-newsletter__form" data-newsletter-form novalidate>
             <div class="ap-field mb-2">
               <label class="visually-hidden" for="ctaNewsletterEmail">Email address</label>
               <input class="ap-input" type="email" id="ctaNewsletterEmail" name="email" data-validate="email" required placeholder="you@example.com" autocomplete="email">
               <div class="ap-error-msg" id="ctaNewsletterEmailError"></div>
             </div>
-            <button class="btn-ap btn-ap--gold btn-ap--block" type="submit"><i class="bi bi-envelope-paper"></i> Subscribe for free</button>
+            <button class="btn-ap btn-ap--gold" type="submit"><i class="bi bi-envelope-paper"></i> Subscribe for free</button>
           </form>
         </div>
       </div>

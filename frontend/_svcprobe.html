@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>probe</title>
+<style>html,body{margin:0;padding:0}iframe{border:0;height:1200px}</style>
+</head>
+<body>
+<pre id="out">PENDING</pre>
+<iframe id="f" src="about:blank"></iframe>
+<script>
+(function () {
+  var parts = (location.hash || '').replace('#', '').split('|');
+  var w = parseInt(parts[0], 10) || 1280;
+  var h = parseInt(parts[1], 10) || 1200;
+  var page = parts[2] || 'index.html';
+  var f = document.getElementById('f');
+  var out = document.getElementById('out');
+  f.style.width = w + 'px';
+  f.style.height = h + 'px';
+  f.src = page;
+  var done = false;
+  function report(o) {
+    if (done) return;
+    done = true;
+    o.done = true;
+    out.textContent = 'JSONSTART' + JSON.stringify(o) + 'JSONEND';
+  }
+  f.onload = function () {
+    setTimeout(function () {
+      try {
+        var d = f.contentDocument;
+        var res = {
+          page: page,
+          w: w,
+          scrollW: d.documentElement.scrollWidth,
+          clientW: d.documentElement.clientWidth,
+          heroH: 0,
+          broken: [],
+          images: [],
+          cards: [],
+          h1: '',
+          error: ''
+        };
+        var h1 = d.querySelector('h1');
+        res.h1 = h1 ? h1.textContent.trim() : '';
+        var hero = d.querySelector('.ap-pagehead, .ap-hero');
+        if (hero) res.heroH = Math.round(hero.getBoundingClientRect().height);
+        var imgs = d.querySelectorAll('img');
+        for (var i = 0; i < imgs.length; i++) {
+          var im = imgs[i];
+          var src = im.getAttribute('src') || '';
+          if (im.naturalWidth === 0) res.broken.push(src);
+          res.images.push(src.replace(/^.*\//, '') + ':' + im.naturalWidth + 'x' + im.naturalHeight);
+        }
+        var cards = d.querySelectorAll('.ap-card');
+        for (var c = 0; c < cards.length; c++) {
+          var r = cards[c].getBoundingClientRect();
+          res.cards.push({ y: Math.round(r.y), x: Math.round(r.x), w: Math.round(r.width), h: Math.round(r.height) });
+        }
+        report(res);
+      } catch (e) {
+        report({ error: String(e) });
+      }
+    }, 2500);
+  };
+  setTimeout(function () { report({ error: 'timeout' }); }, 12000);
+})();
+</script>
+</body>
+</html>
