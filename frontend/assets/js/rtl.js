@@ -22,7 +22,7 @@
         icon = document.createElement("i");
         btn.prepend(icon);
       }
-      icon.className = `bi ${isRtl ? "bi-text-right" : "bi-text-left"}`;
+      icon.className = "bi bi-translate";
       btn.setAttribute("aria-label", isRtl ? "Switch to left-to-right layout" : "Switch to right-to-left layout");
     });
     document.dispatchEvent(new CustomEvent("ap:dir", { detail: { dir } }));

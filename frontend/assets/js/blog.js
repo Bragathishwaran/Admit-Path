@@ -52,7 +52,8 @@
     const moreWrap = root.querySelector("[data-blog-more]");
     const emptyEl = root.querySelector("[data-blog-empty]");
 
-    let state = { q: "", category: "All", shown: 9, pageSize: 9, all: [] };
+    const urlCat = new URLSearchParams(location.search).get("category");
+    let state = { q: "", category: urlCat || "All", shown: 9, pageSize: 9, all: [] };
 
     function renderCategories() {
       const cats = AP.api.blogCategories().filter((category) => category !== "Applications");
@@ -90,7 +91,23 @@
     });
     if (moreWrap) moreWrap.addEventListener("click", () => { state.shown += state.pageSize; renderGrid(); });
 
-    renderCategories(); bindChips(); load();
+    function bindTopicLinks() {
+      document.querySelectorAll("[data-cat-link]").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          const cat = el.getAttribute("data-cat-link");
+          if (!cat) return;
+          e.preventDefault();
+          state.category = cat;
+          state.shown = state.pageSize;
+          chipsWrap.querySelectorAll("[data-cat]").forEach((c) => c.classList.toggle("is-active", c.getAttribute("data-cat") === cat));
+          load();
+          const target = document.getElementById("articles-title");
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    }
+
+    renderCategories(); bindChips(); bindTopicLinks(); load();
   }
 
   /* ---------------- Details ---------------- */

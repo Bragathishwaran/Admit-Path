@@ -54,7 +54,7 @@
 
     <div class="ap-header__actions">
       <button type="button" class="ap-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><i class="bi bi-moon"></i></button>
-      <button type="button" class="ap-icon-btn" data-rtl-toggle aria-label="Toggle RTL"><i class="bi bi-text-wrap"></i><span class="d-none d-lg-inline ms-1" style="font-size:.72rem;font-weight:700">RTL</span></button>
+      <button type="button" class="ap-icon-btn" data-rtl-toggle aria-label="Toggle RTL"><i class="bi bi-translate"></i><span class="d-none d-lg-inline ms-1" style="font-size:.72rem;font-weight:700">RTL</span></button>
 
       <div class="ap-dropdown d-none d-lg-block">
         <button type="button" class="ap-icon-btn" data-dropdown aria-haspopup="true" aria-expanded="false" aria-label="My account"><i class="bi bi-person-circle"></i></button>
@@ -215,15 +215,54 @@
           <h2 id="mentor-title" class="mt-2">Guidance, not gatekeeping</h2>
           <p class="mx-auto mb-0">Our counselors explain the "why" behind every recommendation, so students learn to make their own decisions long after the application is submitted.</p>
         </div>
-        <div class="row g-4 align-items-center">
-          <div class="col-12 col-lg-5 ap-reveal"><div class="ap-media ap-ratio-4x3"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt="Counselor mentoring a student"></div></div>
-          <div class="col-12 col-lg-7 ap-reveal">
-            <div class="row g-3 ap-home2-mentor-points">
-              <div class="col-12 col-sm-6"><article class="ap-card ap-card__body h-100"><div class="d-flex align-items-start gap-3"><span class="ap-icon-box flex-shrink-0"><i class="bi bi-chat-dots"></i></span><div><strong class="d-block mb-1">Open communication</strong><span class="small ap-text-muted">Regular check-ins, clear progress updates and honest feedback keep students and families informed.</span></div></div></article></div>
-              <div class="col-12 col-sm-6"><article class="ap-card ap-card__body h-100"><div class="d-flex align-items-start gap-3"><span class="ap-icon-box ap-icon-box--primary flex-shrink-0"><i class="bi bi-bullseye"></i></span><div><strong class="d-block mb-1">Goal-driven</strong><span class="small ap-text-muted">Each meeting focuses on a practical milestone, with next steps and deadlines matched to the student’s application plan.</span></div></div></article></div>
-              <div class="col-12 col-sm-6"><article class="ap-card ap-card__body h-100"><div class="d-flex align-items-start gap-3"><span class="ap-icon-box ap-icon-box--gold flex-shrink-0"><i class="bi bi-shield-check"></i></span><div><strong class="d-block mb-1">Ethical guidance</strong><span class="small ap-text-muted">We give realistic advice, protect each student’s authentic story and never promise admission outcomes.</span></div></div></article></div>
-              <div class="col-12 col-sm-6"><article class="ap-card ap-card__body h-100"><div class="d-flex align-items-start gap-3"><span class="ap-icon-box ap-icon-box--success flex-shrink-0"><i class="bi bi-heart-pulse"></i></span><div><strong class="d-block mb-1">Student-first</strong><span class="small ap-text-muted">Recommendations consider interests, wellbeing, budget and long-term goals—not pressure or rankings alone.</span></div></div></article></div>
-            </div>
+        <div class="row g-4 ap-home2-mentor-grid">
+          <div class="col-12 col-md-6 col-lg-3 ap-reveal">
+            <article class="ap-card ap-card--hover overflow-hidden h-100 d-flex flex-column ap-mentor-card">
+              <div class="ap-media ap-ratio-16x9">
+                <img src="assets/images/mentoring/open-communication.jpg" alt="Counselor and student in open communication session" loading="lazy">
+              </div>
+              <div class="ap-card__body d-flex flex-column flex-grow-1">
+                <span class="ap-badge ap-badge--primary mb-2 align-self-start">Pillar 01</span>
+                <h3 class="h6 mb-2">Open communication</h3>
+                <p class="small ap-text-muted mb-0 flex-grow-1">Regular check-ins, clear progress updates and honest feedback keep students and families informed.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 ap-reveal">
+            <article class="ap-card ap-card--hover overflow-hidden h-100 d-flex flex-column ap-mentor-card">
+              <div class="ap-media ap-ratio-16x9">
+                <img src="assets/images/mentoring/goal-driven.jpg" alt="Goal setting and milestone roadmap planning" loading="lazy">
+              </div>
+              <div class="ap-card__body d-flex flex-column flex-grow-1">
+                <span class="ap-badge ap-badge--accent mb-2 align-self-start">Pillar 02</span>
+                <h3 class="h6 mb-2">Goal-driven</h3>
+                <p class="small ap-text-muted mb-0 flex-grow-1">Each meeting focuses on a practical milestone, with next steps and deadlines matched to the student’s application plan.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 ap-reveal">
+            <article class="ap-card ap-card--hover overflow-hidden h-100 d-flex flex-column ap-mentor-card">
+              <div class="ap-media ap-ratio-16x9">
+                <img src="assets/images/mentoring/ethical-guidance.jpg" alt="Ethical guidance and authentic student storytelling" loading="lazy">
+              </div>
+              <div class="ap-card__body d-flex flex-column flex-grow-1">
+                <span class="ap-badge ap-badge--gold mb-2 align-self-start">Pillar 03</span>
+                <h3 class="h6 mb-2">Ethical guidance</h3>
+                <p class="small ap-text-muted mb-0 flex-grow-1">We give realistic advice, protect each student’s authentic story and never promise admission outcomes.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 ap-reveal">
+            <article class="ap-card ap-card--hover overflow-hidden h-100 d-flex flex-column ap-mentor-card">
+              <div class="ap-media ap-ratio-16x9">
+                <img src="assets/images/mentoring/student-first.jpg" alt="Empowered student thriving on university campus" loading="lazy">
+              </div>
+              <div class="ap-card__body d-flex flex-column flex-grow-1">
+                <span class="ap-badge ap-badge--success mb-2 align-self-start">Pillar 04</span>
+                <h3 class="h6 mb-2">Student-first</h3>
+                <p class="small ap-text-muted mb-0 flex-grow-1">Recommendations consider interests, wellbeing, budget and long-term goals—not pressure or rankings alone.</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -276,15 +315,15 @@
     </section>
 
     <!-- 9. FINAL CTA -->
-    <section class="ap-section ap-section--tight">
+    <section class="ap-section ap-section--tight" aria-labelledby="cta-home2-title">
       <div class="ap-container">
         <div class="ap-newsletter text-center ap-reveal">
-          <span class="ap-eyebrow" style="background:rgba(255,255,255,.18);color:#fff"><i class="bi bi-stars"></i> Free, no obligation</span>
-          <h2 class="mt-3">Ready to build your admissions plan?</h2>
-          <p class="mx-auto" style="max-width:60ch">Book a free consultation and get a personalised view of your college strategy.</p>
-          <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-            <button type="button" class="btn-ap btn-ap--gold btn-ap--lg ap-w-auto-sm" data-open-modal="consultModal"><i class="bi bi-calendar2-check"></i> Book a Free Consultation</button>
-            <a href="pricing.html" class="btn-ap btn-ap--outline btn-ap--lg ap-w-auto-sm" style="border-color:#fff;color:#fff">View pricing</a>
+          <span class="ap-eyebrow ap-eyebrow--sm" style="background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3)"><i class="bi bi-stars"></i> Free, no obligation</span>
+          <h2 id="cta-home2-title" class="mt-3 mb-2" style="color:#fff">Ready to build your admissions plan?</h2>
+          <p class="mx-auto" style="max-width:60ch;color:rgba(255,255,255,.92)">Book a free consultation and get a personalised view of your college strategy.</p>
+          <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mt-4">
+            <button type="button" class="btn-ap btn-ap--gold btn-ap--lg ap-cta-primary ap-w-auto-sm" data-open-modal="consultModal"><i class="bi bi-calendar2-check"></i> Book a Free Consultation</button>
+            <a href="pricing.html" class="btn-ap btn-ap--outline btn-ap--lg ap-cta-secondary ap-w-auto-sm">View pricing</a>
           </div>
         </div>
       </div>

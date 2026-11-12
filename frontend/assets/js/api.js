@@ -83,15 +83,15 @@
     ];
 
     const blogPosts = [
-      { id: "post_1", slug: "choosing-the-right-college-fit", title: "Choosing the Right College: Fit Beats Rankings", category: "College Selection", author: "Dr. Meera Nair", date: iso(-3), readTime: 6, featured: true, image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80", excerpt: "Rankings tell one story, but fit decides whether you thrive. Here is how to build a list that actually suits you.", tags: ["college selection", "fit", "rankings"] },
-      { id: "post_2", slug: "essay-writing-that-sounds-like-you", title: "Essay Writing That Actually Sounds Like You", category: "Essays", author: "Sara Khan", date: iso(-6), readTime: 7, featured: false, image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80", excerpt: "The best personal statements reveal character through small, specific moments. Learn a framework for authentic essays.", tags: ["essays", "writing", "personal statement"] },
-      { id: "post_3", slug: "application-deadline-planner", title: "The Application Deadline Planner Every Student Needs", category: "Deadlines", author: "Rahul Iyer", date: iso(-10), readTime: 5, featured: false, image: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=1200&q=80", excerpt: "Never miss a deadline again. A month-by-month planner for early action, regular decision and rolling admissions.", tags: ["deadlines", "planning", "timeline"] },
-      { id: "post_4", slug: "scholarships-worth-your-time", title: "How to Find Scholarships Worth Your Time", category: "Scholarships", author: "Ananya Rao", date: iso(-14), readTime: 8, featured: false, image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80", excerpt: "Not every scholarship is worth the application. Here is a filter for high-value, low-competition awards.", tags: ["scholarships", "financial aid", "funding"] },
-      { id: "post_5", slug: "recommendation-letters-that-help", title: "Recommendation Letters That Actually Help", category: "Applications", author: "James Peterson", date: iso(-19), readTime: 6, featured: false, image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80", excerpt: "Who should write your letters, when to ask, and how to make it easy for them to advocate for you.", tags: ["recommendations", "applications", "letters"] },
-      { id: "post_6", slug: "acing-your-admissions-interview", title: "Acing Your Admissions Interview", category: "Interviews", author: "David Fernandes", date: iso(-24), readTime: 5, featured: false, image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80", excerpt: "Interviews reward preparation and genuine curiosity. Practice these question patterns and stories.", tags: ["interviews", "preparation", "confidence"] },
-      { id: "post_7", slug: "building-a-standout-profile", title: "Building a Standout Extracurricular Profile", category: "Applications", author: "Sara Khan", date: iso(-29), readTime: 7, featured: false, image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80", excerpt: "Depth beats breadth. Learn how to show impact and leadership across a few meaningful activities.", tags: ["profile", "extracurriculars", "leadership"] },
-      { id: "post_8", slug: "understanding-financial-aid", title: "Understanding Financial Aid Offers", category: "Scholarships", author: "Ananya Rao", date: iso(-33), readTime: 6, featured: false, image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1200&q=80", excerpt: "Decode grants, loans, work-study and net cost so you can compare offers apple to apple.", tags: ["financial aid", "scholarships", "cost"] },
-      { id: "post_9", slug: "mastering-common-app-activities", title: "Mastering the Common App Activities Section", category: "Applications", author: "James Peterson", date: iso(-35), readTime: 5, featured: false, image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80", excerpt: "Transform your extracurriculars into compelling entries with action, impact, and clarity.", tags: ["common app", "activities", "applications"] },
+      { id: "post_1", slug: "choosing-the-right-college-fit", title: "Choosing the Right College: Fit Beats Rankings", category: "College Selection", author: "Dr. Meera Nair", date: iso(-3), readTime: 6, featured: true, image: "assets/images/blog/college-fit.jpg", excerpt: "Rankings tell one story, but fit decides whether you thrive. Here is how to build a list that actually suits you.", tags: ["college selection", "fit", "rankings"] },
+      { id: "post_2", slug: "essay-writing-that-sounds-like-you", title: "Essay Writing That Actually Sounds Like You", category: "Essays", author: "Sara Khan", date: iso(-6), readTime: 7, featured: false, image: "assets/images/blog/essay-writing.jpg", excerpt: "The best personal statements reveal character through small, specific moments. Learn a framework for authentic essays.", tags: ["essays", "writing", "personal statement"] },
+      { id: "post_3", slug: "application-deadline-planner", title: "The Application Deadline Planner Every Student Needs", category: "Deadlines", author: "Rahul Iyer", date: iso(-10), readTime: 5, featured: false, image: "assets/images/blog/deadline-planner.jpg", excerpt: "Never miss a deadline again. A month-by-month planner for early action, regular decision and rolling admissions.", tags: ["deadlines", "planning", "timeline"] },
+      { id: "post_4", slug: "scholarships-worth-your-time", title: "How to Find Scholarships Worth Your Time", category: "Scholarships", author: "Ananya Rao", date: iso(-14), readTime: 8, featured: false, image: "assets/images/blog/scholarships.jpg", excerpt: "Not every scholarship is worth the application. Here is a filter for high-value, low-competition awards.", tags: ["scholarships", "financial aid", "funding"] },
+      { id: "post_5", slug: "recommendation-letters-that-help", title: "Recommendation Letters That Actually Help", category: "Applications", author: "James Peterson", date: iso(-19), readTime: 6, featured: false, image: "assets/images/blog/recommendations.jpg", excerpt: "Who should write your letters, when to ask, and how to make it easy for them to advocate for you.", tags: ["recommendations", "applications", "letters"] },
+      { id: "post_6", slug: "acing-your-admissions-interview", title: "Acing Your Admissions Interview", category: "Interviews", author: "David Fernandes", date: iso(-24), readTime: 5, featured: false, image: "assets/images/blog/Interview-prep%20(2).jpg", excerpt: "Interviews reward preparation and genuine curiosity. Practice these question patterns and stories.", tags: ["interviews", "preparation", "confidence"] },
+      { id: "post_7", slug: "building-a-standout-profile", title: "Building a Standout Extracurricular Profile", category: "Applications", author: "Sara Khan", date: iso(-29), readTime: 7, featured: false, image: "assets/images/blog/profile-building.jpg", excerpt: "Depth beats breadth. Learn how to show impact and leadership across a few meaningful activities.", tags: ["profile", "extracurriculars", "leadership"] },
+      { id: "post_8", slug: "understanding-financial-aid", title: "Understanding Financial Aid Offers", category: "Scholarships", author: "Ananya Rao", date: iso(-33), readTime: 6, featured: false, image: "assets/images/blog/financial-aid.jpg", excerpt: "Decode grants, loans, work-study and net cost so you can compare offers apple to apple.", tags: ["financial aid", "scholarships", "cost"] },
+      { id: "post_9", slug: "mastering-common-app-activities", title: "Mastering the Common App Activities Section", category: "Applications", author: "James Peterson", date: iso(-35), readTime: 5, featured: false, image: "assets/images/blog/common-app.jpg", excerpt: "Transform your extracurriculars into compelling entries with action, impact, and clarity.", tags: ["common app", "activities", "applications"] },
     ];
 
     // Rich content for the featured + default article (blog-details)
@@ -189,7 +189,16 @@
       if (this.db) return this.db;
       const raw = lsGet(DB_KEY);
       if (raw) {
-        try { this.db = JSON.parse(raw); } catch (e) { this.db = seed(); }
+        try {
+          this.db = JSON.parse(raw);
+          if (Array.isArray(this.db.blogPosts)) {
+            const seedMap = new Map(seed().blogPosts.map((p) => [p.slug, p.image]));
+            this.db.blogPosts.forEach((p) => {
+              const img = seedMap.get(p.slug);
+              if (img) p.image = img;
+            });
+          }
+        } catch (e) { this.db = seed(); }
       } else {
         this.db = seed();
         this.persist();
@@ -443,6 +452,11 @@
       const db = store.load();
       let list = clone(db.blogPosts).sort((a, b) => new Date(b.date) - new Date(a.date));
       const seededPosts = seed().blogPosts;
+      const seedMap = new Map(seededPosts.map((p) => [p.slug, p.image]));
+      list.forEach((post) => {
+        const img = seedMap.get(post.slug);
+        if (img) post.image = img;
+      });
       seededPosts.forEach((post) => {
         if (!list.some((existing) => existing.slug === post.slug)) list.push(post);
       });
@@ -459,6 +473,8 @@
       const db = store.load();
       const p = db.blogPosts.find((x) => x.slug === slug) || seed().blogPosts.find((x) => x.slug === slug);
       if (!p) throw ApiError("Article not found.", 404);
+      const s = seed().blogPosts.find((x) => x.slug === slug);
+      if (s && s.image) p.image = s.image;
       return clone(p);
     },
     async relatedPosts(slug, limit) {
